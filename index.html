@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Story template</title>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+<style>
+	#g-map-box ,
+	#g-map-box .g-artboard {
+		margin:0 auto;
+	}
+	#g-map-box p {
+		margin:0;
+	}
+	#g-map-box .g-aiAbs {
+		position:absolute;
+	}
+	#g-map-box .g-aiImg {
+		position:absolute;
+		top:0;
+		display:block;
+		width:100% !important;
+	}
+	#g-map-box .g-aiSymbol {
+		position: absolute;
+		box-sizing: border-box;
+	}
+	#g-map-box .g-aiPointText p { white-space: nowrap; }
+	#g-map-full {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-map-full p {
+		font-family:Chalkduster;
+		font-weight:regular;
+		line-height:25px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:21px;
+		text-align:left;
+		color:rgb(252,255,221);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-map-full .g-pstyle0 {
+		font-weight:400;
+		color:rgb(255,255,0);
+	}
+	#g-map-full .g-pstyle1 {
+		font-weight:400;
+	}
+	#g-map-medium {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-map-medium p {
+		font-family:Chalkduster;
+		font-weight:regular;
+		line-height:22px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:16px;
+		text-align:left;
+		color:rgb(252,255,221);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-map-medium .g-pstyle0 {
+		font-weight:400;
+	}
+	#g-map-medium .g-pstyle1 {
+		font-weight:400;
+		font-size:18px;
+		color:rgb(255,255,0);
+	}
+	#g-map-medium .g-cstyle0 {
+		font-size:18px;
+	}
+	#g-map-mobile {
+		position:relative;
+		overflow:hidden;
+	}
+	#g-map-mobile p {
+		font-family:Chalkduster;
+		font-weight:regular;
+		line-height:17px;
+		opacity:1;
+		letter-spacing:0em;
+		font-size:14px;
+		text-align:left;
+		color:rgb(252,255,221);
+		text-transform:none;
+		padding-bottom:0;
+		padding-top:0;
+		mix-blend-mode:normal;
+		font-style:normal;
+		height:auto;
+		position:static;
+	}
+	#g-map-mobile .g-pstyle0 {
+		font-weight:400;
+	}
+	#g-map-mobile .g-pstyle1 {
+		font-weight:400;
+		line-height:22px;
+		font-size:18px;
+		color:rgb(255,255,0);
+	}
+	#g-map-Artboard_9 {
+		position:relative;
+		overflow:hidden;
+	}
+/* Add these CSS rules to your style section */
+.scrolly-container {
+    display: flex;
+    max-width: 100%; /* Allow the container to use the full width */
+    margin: 0 auto;  /* Center the container */
+    padding: 0;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .scrolly-container {
+        margin-left: 144px; /* Add left margin on larger screens */
+        padding: 2em;
+        gap: 2em;
+    }
+}
+
+.scrolly-text {
+    flex: 1;
+    max-width: 600px; /* Control the maximum width of the text */
+    text-align: left; /* Ensure text is left-aligned */
+    z-index: 10; /* Ensure text is above graphics */
+    position: relative;
+}
+
+/* Make sure this is outside the main content's centered constraints */
+.main-content .scrolly-container {
+    max-width: 100%;
+}
+
+/* Adjust for mobile responsiveness */
+@media (max-width: 768px) {
+    .scrolly-container {
+        flex-direction: column;
+        margin-left: 0;
+        padding: 1em;
+    }
+    
+    .scrolly-text {
+        max-width: 100%;
+    }
+}
+
+.scrolly-graphic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    pointer-events: none;
+}
+
+.scrolly-graphic.active {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+.scrolly-image {
+    flex: 1;
+    position: relative; 
+    height: 400px;
+    width: 100%;
+    align-self: flex-start;
+    margin-top: 2em;
+}
+
+@media (max-width: 768px) {
+    .scrolly-image {
+        height: 300px;
+    }
+}
+
+.step {
+    margin-bottom: 80vh; /* Increased for better spacing */
+    font-size: 1.1rem;
+    padding: 1em;
+    background-color: rgba(231, 240, 235, 0.8);
+    border-radius: 4px;
+}
+
+.step:last-child {
+    margin-bottom: 40vh; /* Increased bottom margin for last step */
+}
+
+.scrolly-image {
+    position: sticky;
+    top: 20%;
+    height: 400px;
+    align-self: flex-start;
+}
+
+#g-map_1-box, #g-map-box {
+    width: 100%;
+    max-width: 700px;
+}
+
+.g-artboard {
+    max-width: 100%;
+    height: auto;
+}
+
+.g-artboard img {
+    max-width: 100%;
+    height: auto;
+}
+
+body {
+    margin: 0;
+    font-size: 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+.main-content {
+    position: relative;
+    z-index: 5;
+    margin-top: 100vh;
+    background-color: #e7f0eb; 
+    background-image: url("https://www.transparenttextures.com/patterns/french-stucco.png");
+    background-repeat: repeat;
+    background-attachment: scroll;
+    padding: 2em 0;
+}
+
+.main-content p {
+    color: #4b070f;
+    font-size: 20px;
+}
+
+.content {
+    max-width: 640px;
+    margin: auto;
+    padding: 2em;
+}
+
+.header {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+a {
+    color: #5b0101;
+}
+
+.footer {
+    background: #f4f4f4;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 4em;
+    padding: 4em 0;
+    position: relative;
+    z-index: 5;
+}
+
+figure {
+    margin: 0;
+    padding-bottom: 1.2em;
+}
+
+figcaption {
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 0.5em;
+    color: #666;
+}
+
+
+.full-width figure {
+    text-align: center;
+}
+
+iframe,
+img,
+video {
+    max-width: 100%;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0;
+    padding-bottom: 1.2em;
+}
+
+ul {
+    margin: 0;
+    padding-bottom: 1em;
+    line-height: 1.6;
+}
+
+iframe {
+    padding-bottom: 1.2em;
+}
+
+code {
+    font-family: 'Courier New', monospace;
+    background: #fff880;
+}
+
+@media (max-width: 640px) {
+    body {
+        font-size: 18px;
+    }
+
+    .content {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+}
+    </style>
+    <style>
+    #g-map_1-box,
+    #g-map_1-box .g-artboard {
+        margin: 0 auto;
+    }
+
+    #g-map_1-box .g-aiImg {
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 100% !important;
+    }
+
+    #g-map_1-full p.g-pstyle0,
+    #g-map_1-medium p.g-pstyle0,
+    #g-map_1-mobile p.g-pstyle0 {
+        font-family: Chalkduster;
+        font-weight: regular;
+        color: rgb(255,255,0);
+        text-align: left;
+    }
+
+    .g-ai2html-settings {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255,255,0);
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    @media (max-width: 489px) {
+        #g-map_1-full,
+        #g-map_1-medium,
+        #g-map-full,
+        #g-map-medium {
+        display: none;
+        }
+    }
+
+    @media (min-width: 490px) and (max-width: 699px) {
+        #g-map_1-full,
+        #g-map_1-mobile,
+        #g-map-full,
+        #g-map-mobile {
+        display: none;
+        }
+    }
+
+    @media (min-width: 700px) {
+        #g-map_1-medium,
+        #g-map_1-mobile,
+        #g-map-medium,
+        #g-map-mobile {
+        display: none;
+        }
+    }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Seoul Forest style title */
+        .title-container {
+            position: fixed;
+            bottom: 100px; /* Increased from 50px to move it higher */
+            left: 50px;
+            z-index: 2;
+            max-width: 70%;
+        }
+
+        .subhead {
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1.8rem;   
+            font-weight: 600;
+            margin-top: 2em;
+            margin-bottom: 0.6em;
+            line-height: 1.3;
+            color: #222; 
+        }
+        
+
+        .category-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: white;
+            margin-bottom: 15px;
+            opacity: 0.9;
+            text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .fixed-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: white;
+            margin: 0;
+            text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.7);
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 5;
+            margin-top: 100vh;
+            background-color: white;
+        }
+
+        @media (max-width: 640px) {
+            .title-container {
+                bottom: 80px; /* Increased from 30px to move it higher on mobile */
+                left: 30px;
+                max-width: 80%;
+            }
+            
+            .category-label {
+                font-size: 0.8rem;
+                margin-bottom: 10px;
+            }
+            
+            .fixed-title {
+                font-size: 2rem;
+            }
+        }
+            .left-content { 
+            font-family: 'IBM Plex Sans', sans-serif;
+            font-size: 1.8rem;   
+            font-weight: 600;
+            margin-top: 2em;
+            margin-bottom: 0.6em;
+            line-height: 1.3;
+            color: #222; 
+         }
+    </style>
+</head>
+
+
+<body>
+    <!-- Fixed video background -->
+    <div class="video-container">
+        <video src="video.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+    </div>
+
+    <div class="title-container">
+        <div class="category-label">CLIMATE AND ENVIRONMENT</div>
+        <h1 class="fixed-title">A guilty plea was just the beginning: Inside a town's fight for a cleaner future</h1>
+    </div>
+
+    <div class="header"></div>
+
+    <div class="main-content">
+        <div class="content">
+            <div class="byline">
+                <p></p>
+            </div>
+            <p>By <a href="https://ananyabchetia.github.io/">Ananya Chetia</a></p>
+            <p>Oregon native Eric Dion still remembers the pungent odor stinging his neighborhood in the 1980s from the wood treatment facility across the street. </p>
+            <p>"I paid no attention to it," Eric said, who's now in treatment for Diffuse Leptomeningeal Glioneuronal Tumor, a rare slow growing brain tumor that mostly affects children. He and his wife Lisa are convinced living next to contaminated site JH Baxter led to Eric's cancer. </p>
+            <p>Located in Bethel neighborhood in West Eugene Oregon, the corporation pleaded guilty to four federal pollution charges and was ordered to pay $1.5 million in criminal fines in January. The president, 61-year-old Georgia Baxter-Krause from Deschutes, Oregon, pleaded guilty to two counts of making false statements to Oregon inspectors and will be sentenced on April 22, which is Earth Day.</p>
+            <p>"It fuels the fire," Lisa said about the case. "But I don't think it's enough." </p>
+            <p>JH Baxter violated environmental regulations for decades but was only charged based on actions committed between approximately Jan 2, 2019 and Oct 6, 2019. There are over 20 instances where three environmental agencies warned JH Baxter for going against air and water quality standards and hazardous waste regulations, according to a timeline from Oregon State University's research team.</p>
+            <p>It first started with headaches for newly wed Eric in August 2022. </p>
+            <p>"I felt like I was watching him die," Lisa said. </p>
+            <p>When doctors asked the couple if Eric was exposed to anything hazardous at work or his upbringing, a "lightbulb went off" for Lisa. Eric grew up right across the street from the site and went to Fairfield Elementary, which is less than a mile away. </p>
+            <p>"My parents still live there," Eric said.</p>
+            <p>Two years later Eric is on a clinical drug and Lisa hopes JH Baxter is held accountable for personal injury.</p>
+            <p>Two class action lawsuits were filed in 2023, which includes "thousands of clients from the West Eugene area around JH Baxter, whose health or properties were allegedly affected by its operations," according to reporting from <a href="https://www.klcc.org/crime-law-justice/2023-05-02/lawsuits-against-j-h-baxter-advance-but-questions-hover-over-companys-fiscal-status-and-assets">KLCC</a>.</p>
+        </div>
+        <div class="scrolly-container"> 
+            <div class="scrolly-text">
+                <h2 class="subhead">The truth behind JH Baxter</h2>
+                <div class="step" data-index="0">
+                    <p>JH Baxter is a 205 acre wood treatment site in West Eugene, Oregon that produced wood products like railroad ties, utility poles and crossarms from 1937 till its closing in 2022.</p>
+                </div>
+                <div class="step" data-index="1">
+                    <p>Across from JH Baxter is the Bethel neighborhood where Eric was raised. The median household income is $42,500, over $20,000 less than the median household income for Eugene city. Hispanics are the largest minority population in the Bethel neighborhood at 19%. </p>
+                </div>
+            </div>
+            
+            <div class="scrolly-image">
+                
+                <div class="scrolly-graphic active" data-index="0">
+
+                    <div id="g-map_1-box" class="ai2html">
+                 
+                        <div id="g-map_1-full" class="g-artboard" style="width:700px; height:599.4px;" data-aspect-ratio="1.167" data-min-width="700">
+                            <div style=""></div>
+                            <img id="g-map_1-full-img" class="g-map_1-full-img g-aiImg" alt="" src="map_1-full.jpg"/>
+                            <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 54.4640640186756%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 54.4640640186756%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 54.4640640186756%;top:23.7001%;margin-top:-11.2px;left:15.3508%;margin-left:-9.5%;width:19%;">
+                                <p class="g-pstyle0">J H Baxter</p>
+                            </div>
+                        </div>
+                        
+             
+                        <div id="g-map_1-medium" class="g-artboard" style="width:490px; height:409.5px;" data-aspect-ratio="1.197" data-min-width="490" data-max-width="699">
+                            <div style=""></div>
+                            <img id="g-map_1-medium-img" class="g-map_1-medium-img g-aiImg" alt="" src="map_1-medium.jpg"/>
+                            <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:37.8233%;margin-top:-9.9px;left:22.0354%;margin-left:-13.4694%;width:26.9388%;">
+                                <p class="g-pstyle0">J H Baxter</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Artboard: mobile -->
+                        <div id="g-map_1-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px" data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
+                            <div style="padding: 0 0 125.5467% 0;"></div>
+                            <img id="g-map_1-mobile-img" class="g-map_1-mobile-img g-aiImg" alt="" src="map_1-mobile.jpg"/>
+                            <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:46.2801%;margin-top:-9.9px;left:24.271%;margin-left:-17.6%;width:35.2%;">
+                                <p class="g-pstyle0">J H Baxter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second graphic (shown when step 1 is active) -->
+                <div class="scrolly-graphic" data-index="1">
+                    <!-- Second graphic - AI2HTML map -->
+                    <div id="g-map-box" class="ai2html">
+                    
+                        <!-- Artboard: full -->
+                    <div id="g-map-full" class="g-artboard" style="width:700px; height:599.4px;" data-aspect-ratio="1.167" data-min-width="700">
+                        <div style=""></div>
+                                <img id="g-map-full-img" class="g-map-full-img g-aiImg" alt="" src="map-full.jpg"/>
+                                <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 54.4640640186756%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 54.4640640186756%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 54.4640640186756%;top:21.2001%;margin-top:-11.2px;left:12.0651%;margin-left:-9.5%;width:19%;">
+                                    <p class="g-pstyle0">J H  Baxter </p>
+                                </div>
+                                <div id="g-ai0-2" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);transform-origin: 50% 53.2456462694575%;-webkit-transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);-webkit-transform-origin: 50% 53.2456462694575%;-ms-transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);-ms-transform-origin: 50% 53.2456462694575%;top:28.4009%;margin-top:-15.4px;left:79.9392%;margin-left:-31%;width:62%;">
+                                    <p class="g-pstyle1"> Bethel Neighborhood</p>
+                                </div>
+                            </div>
+        
+                        <!-- Artboard: medium -->
+                        <div id="g-map-medium" class="g-artboard" style="width:490px; height:409.5px;" data-aspect-ratio="1.197" data-min-width="490" data-max-width="632">
+                            <div style=""></div>
+                            <img id="g-map-medium-img" class="g-map-medium-img g-aiImg" alt="" src="map-medium.jpg"/>
+                            <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);transform-origin: 50% 53.7825192413527%;-webkit-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-webkit-transform-origin: 50% 53.7825192413527%;-ms-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-ms-transform-origin: 50% 53.7825192413527%;top:23.7408%;margin-top:-13.2px;left:74.1697%;margin-left:-21.4286%;width:42.8571%;">
+                                <p class="g-pstyle0"><span class="g-cstyle0"> </span>Bethel Neighborhood</p>
+                            </div>
+                            <div id="g-ai1-2" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:37.8233%;margin-top:-9.9px;left:22.0354%;margin-left:-13.4694%;width:26.9388%;">
+                                <p class="g-pstyle1">J H  Baxter </p>
+                            </div>
+                        </div>
+        
+                        <!-- Artboard: mobile -->
+                        <div id="g-map-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px" data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
+                            <div style="padding: 0 0 125.5467% 0;"></div>
+                            <img id="g-map-mobile-img" class="g-map-mobile-img g-aiImg" alt="" src="map-mobile.jpg"/>
+                            <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);transform-origin: 50% 54.7885179259608%;-webkit-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-webkit-transform-origin: 50% 54.7885179259608%;-ms-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-ms-transform-origin: 50% 54.7885179259608%;top:30.0428%;margin-top:-10.4px;left:67.6316%;margin-left:-28%;width:56%;">
+                                <p class="g-pstyle0"> Bethel Neighborhood</p>
+                            </div>
+                            <div id="g-ai2-2" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:46.2801%;margin-top:-9.9px;left:24.271%;margin-left:-17.6%;width:35.2%;">
+                                <p class="g-pstyle1">J H  Baxter </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h2 class="subhead">How Bethel fought back</h2>
+          </div>          
+          <div class="content">
+            <p>Students at Kalapuya High School, just under three miles away from JH Baxter, have come to classes with hives, rashes and asthma, high school biology Kelly Ferguson said. One of her students was even diagnosed with cancer and had to miss an entire year of classes.</p>
+            <p>Nationally, over 1700 schools are within just a mile away from a contaminated site on the Superfund's NPL list. </p>
+        
+            <style>
+                #g-waffle-box,
+                #g-waffle-box .g-artboard {
+                  margin: 0 auto;
+                }
+                #g-waffle-box p {
+                  margin: 0;
+                }
+                #g-waffle-box .g-aiAbs {
+                  position: absolute;
+                }
+                #g-waffle-box .g-aiImg {
+                  position: absolute;
+                  top: 0;
+                  display: block;
+                  width: 100% !important;
+                }
+                #g-waffle-box .g-aiSymbol {
+                  position: absolute;
+                  box-sizing: border-box;
+                }
+                #g-waffle-box .g-aiPointText p { white-space: nowrap; }
+            
+                /* Full-size styles */
+                #g-waffle-full {
+                  position: relative;
+                  overflow: hidden;
+                }
+                #g-waffle-full p {
+                  font-family: Chalkduster, cursive;
+                  font-weight: regular;
+                  line-height: 25px;
+                  height: auto;
+                  opacity: 1;
+                  letter-spacing: 0em;
+                  font-size: 21px;
+                  text-align: left;
+                  color: rgb(53,5,5);
+                  text-transform: none;
+                  padding-bottom: 0;
+                  padding-top: 0;
+                  mix-blend-mode: normal;
+                  font-style: normal;
+                  position: static;
+                }
+                #g-waffle-full .g-pstyle0 {
+                  font-weight: 400;
+                  height: 25px;
+                }
+                #g-waffle-full .g-pstyle1 {
+                  font-weight: 400;
+                  line-height: 22px;
+                  height: 22px;
+                  font-size: 18px;
+                  color: rgb(81,8,8);
+                }
+                #g-waffle-full .g-pstyle2 {
+                  font-weight: 400;
+                  line-height: 14px;
+                  font-size: 12px;
+                  color: rgb(81,8,8);
+                }
+                #g-waffle-full .g-pstyle3 {
+                  font-weight: 400;
+                  line-height: 12px;
+                  font-size: 10px;
+                  color: rgb(81,8,8);
+                }
+            
+                /* Medium-size styles */
+                #g-waffle-medium {
+                  position: relative;
+                  overflow: hidden;
+                }
+                #g-waffle-medium p {
+                  font-family: Chalkduster, cursive;
+                  font-weight: regular;
+                  line-height: 22px;
+                  height: auto;
+                  opacity: 1;
+                  letter-spacing: 0em;
+                  font-size: 18px;
+                  text-align: left;
+                  color: rgb(81,8,8);
+                  text-transform: none;
+                  padding-bottom: 0;
+                  padding-top: 0;
+                  mix-blend-mode: normal;
+                  font-style: normal;
+                  position: static;
+                }
+                #g-waffle-medium .g-pstyle0 {
+                  font-weight: 400;
+                  height: 22px;
+                }
+                #g-waffle-medium .g-pstyle1 {
+                  font-weight: 400;
+                  line-height: 14px;
+                  font-size: 12px;
+                }
+                #g-waffle-medium .g-pstyle2 {
+                  font-weight: 400;
+                  line-height: 12px;
+                  height: 12px;
+                  font-size: 10px;
+                }
+                #g-waffle-medium .g-cstyle0 {
+                  font-size: 12px;
+                }
+            
+                /* Mobile-size styles */
+                #g-waffle-mobile {
+                  position: relative;
+                  overflow: hidden;
+                }
+                #g-waffle-mobile p {
+                  font-family: Chalkduster, cursive;
+                  font-weight: regular;
+                  line-height: 19px;
+                  height: auto;
+                  opacity: 1;
+                  letter-spacing: 0em;
+                  font-size: 16px;
+                  text-align: left;
+                  color: rgb(81,8,8);
+                  text-transform: none;
+                  padding-bottom: 0;
+                  padding-top: 0;
+                  mix-blend-mode: normal;
+                  font-style: normal;
+                  position: static;
+                }
+                #g-waffle-mobile .g-pstyle0 {
+                  font-weight: 400;
+                  height: 19px;
+                }
+                #g-waffle-mobile .g-pstyle1 {
+                  font-weight: 400;
+                  line-height: 16px;
+                  height: 16px;
+                  font-size: 14px;
+                }
+                #g-waffle-mobile .g-pstyle2 {
+                  font-weight: 400;
+                  line-height: 12px;
+                  font-size: 10px;
+                }
+                #g-waffle-mobile .g-pstyle3 {
+                  font-weight: 400;
+                  line-height: 12px;
+                  height: 12px;
+                  font-size: 10px;
+                }
+            
+                /* Responsive display rules */
+                .g-artboard {
+                  display: none;
+                }
+            
+                /* Show mobile for screens less than 490px */
+                @media (max-width: 489px) {
+                  #g-waffle-mobile {
+                    display: block;
+                    max-width: 375px;
+                    width: 100%;
+                    height: auto;
+                    padding-bottom: 125.5467%;
+                  }
+                }
+            
+                /* Show medium for screens 490px to 699px */
+                @media (min-width: 490px) and (max-width: 699px) {
+                  #g-waffle-medium {
+                    display: block;
+                    width: 100%;
+                    max-width: 490px;
+                    height: 0;
+                    padding-bottom: 132.45%;
+                  }
+                }
+            
+                /* Show full for screens 700px or larger */
+                @media (min-width: 700px) {
+                  #g-waffle-full {
+                    display: block;
+                    width: 100%;
+                    max-width: 700px;
+                    height: 0;
+                    padding-bottom: 135.71%;
+                  }
+                }
+            
+                /* Container styles */
+                .responsive-container {
+                  max-width: 700px;
+                  margin: 0 auto;
+                  width: 100%;
+                }
+              </style>
+            </head>
+            <body>
+              <div class="responsive-container">
+                <div id="g-waffle-box" class="ai2html">
+                  
+                  <!-- Artboard: full -->
+                  <div id="g-waffle-full" class="g-artboard">
+                    <img id="g-waffle-full-img" class="g-waffle-full-img g-aiImg" alt="Waffle chart showing over 17900 schools within a mile of Superfund sites" src="waffle-full.jpg"/>
+                    <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:6.0455%;margin-top:-32.4px;left:6.2164%;width:610px;">
+                      <p class="g-pstyle0">Over 17900 schools are within a mile away from</p>
+                      <p class="g-pstyle0"> a Superfund site. </p>
+                    </div>
+                    <div id="g-ai0-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:15.6268%;margin-top:-16.5px;left:48.9099%;width:160px;">
+                      <p class="g-pstyle1">= 16 schools </p>
+                    </div>
+                    <div id="g-ai0-3" class="g-ai2html-settings g-aiAbs" style="top:97.2632%;left:70.9328%;width:29.4286%;">
+                      <p class="g-pstyle2">Drawing by Ananya Chetia</p>
+                    </div>
+                    <div id="g-ai0-4" class="g-ai2html-settings g-aiAbs" style="top:98.3158%;left:1.2877%;width:29.4286%;">
+                      <p class="g-pstyle3">Source: Schools near NPL dataset</p>
+                    </div>
+                  </div>
+            
+                  <!-- Artboard: medium -->
+                  <div id="g-waffle-medium" class="g-artboard">
+                    <img id="g-waffle-medium-img" class="g-waffle-medium-img g-aiImg" alt="Waffle chart showing over 17900 schools within a mile of Superfund sites" src="waffle-medium.jpg"/>
+                    <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:5.4322%;margin-top:-27.3px;left:3.924%;width:474px;">
+                      <p class="g-pstyle0">Over 17900 schools are within a mile away </p>
+                      <p class="g-pstyle0">from a Superfund site. </p>
+                    </div>
+                    <div id="g-ai1-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:15.1702%;margin-top:-16.5px;left:44.9731%;width:157px;">
+                      <p class="g-pstyle0">= 16 schools </p>
+                    </div>
+                    <div id="g-ai1-3" class="g-ai2html-settings g-aiAbs" style="top:96.1479%;left:61.0279%;width:42.0408%;">
+                      <p class="g-pstyle1">Drawing by Ananya Chetia</p>
+                    </div>
+                    <div id="g-ai1-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:97.6964%;margin-top:-9px;left:1.8724%;width:212px;">
+                      <p class="g-pstyle2">Source: Schools near NPL dataset</p>
+                    </div>
+                  </div>
+            
+                  <!-- Artboard: mobile -->
+                  <div id="g-waffle-mobile" class="g-artboard">
+                    <img id="g-waffle-mobile-img" class="g-waffle-mobile-img g-aiImg" alt="Waffle chart showing over 17900 schools within a mile of Superfund sites" src="waffle-mobile.jpg"/>
+                    <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:7.4233%;margin-top:-23.9px;left:3.8232%;width:371px;">
+                      <p class="g-pstyle0">Over 17900 schools are within a mile </p>
+                      <p class="g-pstyle0">away from a Superfund site. </p>
+                    </div>
+                    <div id="g-ai2-2" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:17.0439%;margin-top:-12.2px;left:43.075%;width:126px;">
+                      <p class="g-pstyle1">= 16 schools </p>
+                    </div>
+                    <div id="g-ai2-3" class="g-ai2html-settings g-aiAbs" style="top:96.2192%;left:58.7641%;width:54.9333%;">
+                      <p class="g-pstyle2">Drawing by Ananya Chetia</p>
+                    </div>
+                    <div id="g-ai2-4" class="g-ai2html-settings g-aiAbs g-aiPointText" style="top:98.3538%;margin-top:-9px;left:1.2992%;width:212px;">
+                      <p class="g-pstyle3">Source: Schools near NPL dataset</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </body>
+            </html>
+
+            <p>Using student self reported data and research from state nonprofit Beyond Toxics Waste, Ferguson teaches her students about environmental justice.</p>
+            <p>But with the Trump administration removing the environmental justice screening tool, Ferguson said it hasn't been easy to show how JH Baxter impacts the surrounding area. </p>
+            </div>
+          </div>
+        <div class="footer">
+            <div class="content">
+                <p>Ananya Chetia is a data journalist at Columbia University. Check out the code for this story <a href="https://github.com/jsoma/page-templates/">here</a>.</p>
+            </div>
+        </div>
+    </div>
+
+<script src="https://unpkg.com/scrollama"></script>
+<script>
+    function initScrollytelling() {
+  // Get all step elements
+  const steps = document.querySelectorAll('.step');
+  // Get all graphic elements
+  const graphics = document.querySelectorAll('.scrolly-graphic');
+  
+  // Set up IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // If the step is in view
+      if (entry.isIntersecting) {
+        // Get the data-index attribute to match with corresponding graphic
+        const index = entry.target.dataset.index;
+        
+        // Remove active class from all graphics
+        graphics.forEach(g => g.classList.remove('active'));
+        
+        // Add active class to the matching graphic
+        const activeGraphic = document.querySelector(`.scrolly-graphic[data-index="${index}"]`);
+        if (activeGraphic) {
+          activeGraphic.classList.add('active');
+        }
+      }
+    });
+  }, {
+    // Configure the observer
+    threshold: 0.7, // Trigger when 70% of the step is visible
+    rootMargin: "-100px 0px -300px 0px" // Adjust the trigger area
+  });
+  
+  // Observe all steps
+  steps.forEach(step => observer.observe(step));
+}
+
+// Initialize when the page loads
+document.addEventListener('DOMContentLoaded', initScrollytelling);
+</script>
+</body>
