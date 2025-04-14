@@ -23,10 +23,10 @@
 
 #### I had three main components I wanted to produce. 
 #### a. Use satellite imagery to identify JH Baxter and Bethel neighborhood. 
-####   i. To show the satellite images, I used scrollytelling here. I annotated the satellite images using Adobe Illustrator.
+####                i. To show the satellite images, I used scrollytelling here. I annotated the satellite images using Adobe Illustrator.
 
 #### b. I made a waffle chart/pictogram to show how many schools are near Superfund sites. The purpose of the pictogram was to show, a lot of schools are near these sites! 
-####    i. I hand drew a school on ProCreate. From there, I used Adobe Illustrator to make the pictogram.  
+####                i. I hand drew a school on ProCreate. From there, I used Adobe Illustrator to make the pictogram.  
 
 ## Challenges 
 #### Current challenges I am working on is the presentation of the story. Given this is my first time trying to do scrollytelling, I am challenged with the layout. Nevertheless, it's a great challenge! 
