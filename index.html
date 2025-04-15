@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contaminated site</title>
 
-    <!-- Google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 	#g-map-box ,
@@ -149,9 +143,9 @@
 
 .scrolly-text {
     flex: 1;
-    max-width: 600px; /* Control the maximum width of the text */
-    text-align: left; /* Ensure text is left-aligned */
-    z-index: 10; /* Ensure text is above graphics */
+    max-width: 600px; 
+    text-align: left; 
+    z-index: 10; 
     position: relative;
 }
 
@@ -169,6 +163,16 @@
     .scrolly-text {
         max-width: 100%;
     }
+}
+
+p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;  
+    line-height: 1.5; 
+    margin: 0;
+    padding-bottom: 1em; 
+    color: #333333;   
+    font-weight: 400;  
 }
 
 .scrolly-graphic {
@@ -204,7 +208,7 @@
 }
 
 .step {
-    margin-bottom: 80vh; /* Increased for better spacing */
+    margin-bottom: 80vh; 
     font-size: 1.1rem;
     padding: 1em;
     background-color: rgba(231, 240, 235, 0.8);
@@ -212,7 +216,7 @@
 }
 
 .step:last-child {
-    margin-bottom: 40vh; /* Increased bottom margin for last step */
+    margin-bottom: 40vh; 
 }
 
 .scrolly-image {
@@ -240,7 +244,7 @@
 body {
     margin: 0;
     font-size: 20px;
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     text-rendering: optimizeLegibility;
 }
 
@@ -264,6 +268,7 @@ body {
     max-width: 640px;
     margin: auto;
     padding: 2em;
+    font-family: 'Inter', sans-serif;
 }
 
 .header {
@@ -281,7 +286,6 @@ a {
     background: #f4f4f4;
     text-align: center;
     font-size: 0.8em;
-    margin-top: 4em;
     padding: 4em 0;
     position: relative;
     z-index: 5;
@@ -327,7 +331,7 @@ iframe {
 }
 
 code {
-    font-family: 'Courier New', monospace;
+    font-family: 'Inter', sans-serif;;
     background: #fff880;
 }
 
@@ -433,7 +437,7 @@ code {
         }
 
         .subhead {
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: 'Inter', sans-serif;;
             font-size: 1.8rem;   
             font-weight: 600;
             margin-top: 2em;
@@ -467,15 +471,20 @@ code {
         }
 
         .main-content {
-            position: relative;
-            z-index: 5;
-            margin-top: 100vh;
-            background-color: white;
+          position: relative;
+          z-index: 5;
+          margin-top: 100vh;
+          background-color: #e7f0eb; 
+          background-image: url("https://www.transparenttextures.com/patterns/french-stucco.png");
+          background-repeat: repeat;
+          background-attachment: scroll;
+          padding: 2em 0;
+          padding-bottom: 4em;
         }
 
         @media (max-width: 640px) {
             .title-container {
-                bottom: 80px; /* Increased from 30px to move it higher on mobile */
+                bottom: 80px; 
                 left: 30px;
                 max-width: 80%;
             }
@@ -490,7 +499,7 @@ code {
             }
         }
             .left-content { 
-            font-family: 'IBM Plex Sans', sans-serif;
+            font-family: 'Inter', sans-serif;;
             font-size: 1.8rem;   
             font-weight: 600;
             margin-top: 2em;
