@@ -40,6 +40,4 @@
 
 #### Current challenges I am working on is the presentation of the story. Given this is my first time trying to do scrollytelling, I am challenged with the layout. Nevertheless, it's a great challenge!
 
-## Additional notes
 
-#### I relied on [this code](https://github.com/edriessen/scrollytelling-scrollama-d3-demo/blob/main/index.html) and replicated it for my scrollytelling.
