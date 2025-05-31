@@ -5,6 +5,12 @@
             "family": "Chalkduster",
             "weight": "400",
             "style": ""
+        },
+        {
+            "aifont": "Arial-Black",
+            "family": "Arial Black",
+            "weight": "900",
+            "style": ""
         }
     ]
 }
