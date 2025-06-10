@@ -10,515 +10,552 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-<style>
+    <style>
+        #g-map_1-box,
+        #g-map_1-box .g-artboard {
+            margin: 0 auto;
+        }
 
-  	#g-map_1-box ,
-	#g-map_1-box .g-artboard {
-		margin:0 auto;
-	}
-	#g-map_1-box p {
-		margin:0;
-	}
-	#g-map_1-box .g-aiAbs {
-		position:absolute;
-	}
-	#g-map_1-box .g-aiImg {
-		position:absolute;
-		top:0;
-		display:block;
-		width:100% !important;
-	}
-	#g-map_1-box .g-aiSymbol {
-		position: absolute;
-		box-sizing: border-box;
-	}
-	#g-map_1-box .g-aiPointText p { white-space: nowrap; }
-	#g-map_1-full {
-		position:relative;
-		overflow:hidden;
-	}
-	#g-map_1-full p {
-		font-family:Chalkduster;
-		font-weight:regular;
-		line-height:29px;
-		opacity:1;
-		letter-spacing:0em;
-		font-size:24px;
-		text-align:left;
-		color:rgb(255,255,0);
-		text-transform:none;
-		padding-bottom:0;
-		padding-top:0;
-		mix-blend-mode:normal;
-		font-style:normal;
-		height:auto;
-		position:static;
-	}
-	#g-map_1-full .g-pstyle0 {
-		font-weight:400;
-	}
-	#g-map_1-medium {
-		position:relative;
-		overflow:hidden;
-	}
-	#g-map_1-medium p {
-		font-family:Chalkduster;
-		font-weight:regular;
-		line-height:22px;
-		opacity:1;
-		letter-spacing:0em;
-		font-size:18px;
-		text-align:left;
-		color:rgb(255,255,0);
-		text-transform:none;
-		padding-bottom:0;
-		padding-top:0;
-		mix-blend-mode:normal;
-		font-style:normal;
-		height:auto;
-		position:static;
-	}
-	#g-map_1-medium .g-pstyle0 {
-		font-weight:400;
-	}
-	#g-map_1-mobile {
-		position:relative;
-		overflow:hidden;
-	}
-	#g-map_1-mobile p {
-		font-family:Chalkduster;
-		font-weight:regular;
-		line-height:22px;
-		opacity:1;
-		letter-spacing:0em;
-		font-size:18px;
-		text-align:left;
-		color:rgb(255,255,0);
-		text-transform:none;
-		padding-bottom:0;
-		padding-top:0;
-		mix-blend-mode:normal;
-		font-style:normal;
-		height:auto;
-		position:static;
-	}
-	#g-map_1-mobile .g-pstyle0 {
-		font-weight:400;
-	}
-	#g-map_1-Artboard_9 {
-		position:relative;
-		overflow:hidden;
-	}
+        #g-map_1-box p {
+            margin: 0;
+        }
 
-	#g-map-box ,
-	#g-map-box .g-artboard {
-		margin:0 auto;
-	}
-	#g-map-box p {
-		margin:0;
-	}
-	#g-map-box .g-aiAbs {
-		position:absolute;
-	}
-	#g-map-box .g-aiImg {
-		position:absolute;
-		top:0;
-		display:block;
-		width:100% !important;
-	}
-	#g-map-box .g-aiSymbol {
-		position: absolute;
-		box-sizing: border-box;
-	}
-	#g-map-box .g-aiPointText p { white-space: nowrap; }
-	#g-map-full {
-		position:relative;
-		overflow:hidden;
-	}
-	#g-map-full p {
-		font-family:Chalkduster;
-		font-weight:regular;
-		line-height:25px;
-		opacity:1;
-		letter-spacing:0em;
-		font-size:21px;
-		text-align:left;
-		color:rgb(252,255,221);
-		text-transform:none;
-		padding-bottom:0;
-		padding-top:0;
-		mix-blend-mode:normal;
-		font-style:normal;
-		height:auto;
-		position:static;
-	}
-	#g-map-full .g-pstyle0 {
-		font-weight:400;
-		color:rgb(255,255,0);
-	}
-	#g-map-full .g-pstyle1 {
-		font-weight:400;
-	}
-	#g-map-medium {
-		position:relative;
-		overflow:hidden;
-	}
-	#g-map-medium p {
-		font-family:Chalkduster;
-		font-weight:regular;
-		line-height:22px;
-		opacity:1;
-		letter-spacing:0em;
-		font-size:16px;
-		text-align:left;
-		color:rgb(252,255,221);
-		text-transform:none;
-		padding-bottom:0;
-		padding-top:0;
-		mix-blend-mode:normal;
-		font-style:normal;
-		height:auto;
-		position:static;
-	}
-	#g-map-medium .g-pstyle0 {
-		font-weight:400;
-	}
-	#g-map-medium .g-pstyle1 {
-		font-weight:400;
-		font-size:18px;
-		color:rgb(255,255,0);
-	}
-	#g-map-medium .g-cstyle0 {
-		font-size:18px;
-	}
-	#g-map-mobile {
-		position:relative;
-		overflow:hidden;
-	}
-	#g-map-mobile p {
-		font-family:Chalkduster;
-		font-weight:regular;
-		line-height:17px;
-		opacity:1;
-		letter-spacing:0em;
-		font-size:14px;
-		text-align:left;
-		color:rgb(252,255,221);
-		text-transform:none;
-		padding-bottom:0;
-		padding-top:0;
-		mix-blend-mode:normal;
-		font-style:normal;
-		height:auto;
-		position:static;
-	}
-	#g-map-mobile .g-pstyle0 {
-		font-weight:400;
-	}
-	#g-map-mobile .g-pstyle1 {
-		font-weight:400;
-		line-height:22px;
-		font-size:18px;
-		color:rgb(255,255,0);
-	}
-	#g-map-Artboard_9 {
-		position:relative;
-		overflow:hidden;
-	}
+        #g-map_1-box .g-aiAbs {
+            position: absolute;
+        }
 
-  .scrolly-container {
-    display: flex;
-    max-width: 100%; 
-    margin: 0 auto;  
-    padding: 0;
-    position: relative;
-}
+        #g-map_1-box .g-aiImg {
+            position: absolute;
+            top: 0;
+            display: block;
+            width: 100% !important;
+        }
 
-@media (min-width: 768px) {
-    .scrolly-container {
-        margin-left: 144px; 
-        padding: 2em;
-        gap: 2em;
-    }
-}
+        #g-map_1-box .g-aiSymbol {
+            position: absolute;
+            box-sizing: border-box;
+        }
 
-.scrolly-text {
-    flex: 1;
-    max-width: 600px; 
-    text-align: left; 
-    z-index: 10; 
-    position: relative;
-}
+        #g-map_1-box .g-aiPointText p {
+            white-space: nowrap;
+        }
 
-.main-content .scrolly-container {
-    max-width: 100%;
-}
+        #g-map_1-full {
+            position: relative;
+            overflow: hidden;
+        }
 
-@media (max-width: 768px) {
-    .scrolly-container {
-        flex-direction: column;
-        margin-left: 0;
-        padding: 1em;
-    }
-    
-    .scrolly-text {
-        max-width: 100%;
-    }
-}
+        #g-map_1-full p {
+            font-family: Chalkduster;
+            font-weight: regular;
+            line-height: 29px;
+            opacity: 1;
+            letter-spacing: 0em;
+            font-size: 24px;
+            text-align: left;
+            color: rgb(255, 255, 0);
+            text-transform: none;
+            padding-bottom: 0;
+            padding-top: 0;
+            mix-blend-mode: normal;
+            font-style: normal;
+            height: auto;
+            position: static;
+        }
 
+        #g-map_1-full .g-pstyle0 {
+            font-weight: 400;
+        }
 
-.scrolly-graphic {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    pointer-events: none;
-}
+        #g-map_1-medium {
+            position: relative;
+            overflow: hidden;
+        }
 
-.scrolly-graphic.active {
-    opacity: 1;
-    pointer-events: auto;
-    z-index: 1;
-}
+        #g-map_1-medium p {
+            font-family: Chalkduster;
+            font-weight: regular;
+            line-height: 22px;
+            opacity: 1;
+            letter-spacing: 0em;
+            font-size: 18px;
+            text-align: left;
+            color: rgb(255, 255, 0);
+            text-transform: none;
+            padding-bottom: 0;
+            padding-top: 0;
+            mix-blend-mode: normal;
+            font-style: normal;
+            height: auto;
+            position: static;
+        }
 
-.scrolly-image {
-    flex: 1;
-    position: relative; 
-    height: 400px;
-    width: 100%;
-    align-self: flex-start;
-    margin-top: 2em;
-}
+        #g-map_1-medium .g-pstyle0 {
+            font-weight: 400;
+        }
 
-@media (max-width: 768px) {
-    .scrolly-image {
-        height: 300px;
-    }
-}
+        #g-map_1-mobile {
+            position: relative;
+            overflow: hidden;
+        }
 
-.step {
-    margin-bottom: 70vh; 
-    font-size: 1.5rem;
-    padding: 0.15em;
-    border-radius: 4px;
-}
+        #g-map_1-mobile p {
+            font-family: Chalkduster;
+            font-weight: regular;
+            line-height: 22px;
+            opacity: 1;
+            letter-spacing: 0em;
+            font-size: 18px;
+            text-align: left;
+            color: rgb(255, 255, 0);
+            text-transform: none;
+            padding-bottom: 0;
+            padding-top: 0;
+            mix-blend-mode: normal;
+            font-style: normal;
+            height: auto;
+            position: static;
+        }
 
-.step:last-child {
-    margin-bottom: 40vh; 
-}
+        #g-map_1-mobile .g-pstyle0 {
+            font-weight: 400;
+        }
 
-.scrolly-image {
-    position: sticky;
-    top: 20%;
-    height: 600px;
-    align-self: flex-start;
-}
+        #g-map_1-Artboard_9 {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #g-map-box,
+        #g-map-box .g-artboard {
+            margin: 0 auto;
+        }
+
+        #g-map-box p {
+            margin: 0;
+        }
+
+        #g-map-box .g-aiAbs {
+            position: absolute;
+        }
+
+        #g-map-box .g-aiImg {
+            position: absolute;
+            top: 0;
+            display: block;
+            width: 100% !important;
+        }
+
+        #g-map-box .g-aiSymbol {
+            position: absolute;
+            box-sizing: border-box;
+        }
+
+        #g-map-box .g-aiPointText p {
+            white-space: nowrap;
+        }
+
+        #g-map-full {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #g-map-full p {
+            font-family: Chalkduster;
+            font-weight: regular;
+            line-height: 25px;
+            opacity: 1;
+            letter-spacing: 0em;
+            font-size: 21px;
+            text-align: left;
+            color: rgb(252, 255, 221);
+            text-transform: none;
+            padding-bottom: 0;
+            padding-top: 0;
+            mix-blend-mode: normal;
+            font-style: normal;
+            height: auto;
+            position: static;
+        }
+
+        #g-map-full .g-pstyle0 {
+            font-weight: 400;
+            color: rgb(255, 255, 0);
+        }
+
+        #g-map-full .g-pstyle1 {
+            font-weight: 400;
+        }
+
+        #g-map-medium {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #g-map-medium p {
+            font-family: Chalkduster;
+            font-weight: regular;
+            line-height: 22px;
+            opacity: 1;
+            letter-spacing: 0em;
+            font-size: 16px;
+            text-align: left;
+            color: rgb(252, 255, 221);
+            text-transform: none;
+            padding-bottom: 0;
+            padding-top: 0;
+            mix-blend-mode: normal;
+            font-style: normal;
+            height: auto;
+            position: static;
+        }
+
+        #g-map-medium .g-pstyle0 {
+            font-weight: 400;
+        }
+
+        #g-map-medium .g-pstyle1 {
+            font-weight: 400;
+            font-size: 18px;
+            color: rgb(255, 255, 0);
+        }
+
+        #g-map-medium .g-cstyle0 {
+            font-size: 18px;
+        }
+
+        #g-map-mobile {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #g-map-mobile p {
+            font-family: Chalkduster;
+            font-weight: regular;
+            line-height: 17px;
+            opacity: 1;
+            letter-spacing: 0em;
+            font-size: 14px;
+            text-align: left;
+            color: rgb(252, 255, 221);
+            text-transform: none;
+            padding-bottom: 0;
+            padding-top: 0;
+            mix-blend-mode: normal;
+            font-style: normal;
+            height: auto;
+            position: static;
+        }
+
+        #g-map-mobile .g-pstyle0 {
+            font-weight: 400;
+        }
+
+        #g-map-mobile .g-pstyle1 {
+            font-weight: 400;
+            line-height: 22px;
+            font-size: 18px;
+            color: rgb(255, 255, 0);
+        }
+
+        #g-map-Artboard_9 {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scrolly-container {
+            display: flex;
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .scrolly-container {
+                margin-left: 144px;
+                padding: 2em;
+                gap: 2em;
+            }
+        }
+
+        .scrolly-text {
+            flex: 1;
+            max-width: 600px;
+            text-align: left;
+            z-index: 10;
+            position: relative;
+        }
+
+        .main-content .scrolly-container {
+            max-width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .scrolly-container {
+                flex-direction: column;
+                margin-left: 0;
+                padding: 1em;
+            }
+
+            .scrolly-text {
+                max-width: 100%;
+            }
+        }
 
 
-.g-artboard {
-    max-width: 100%;
-    height: auto;
-}
+        .scrolly-graphic {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            pointer-events: none;
+        }
 
-.g-artboard img {
-    max-width: 100%;
-    height: auto;
-}
+        .scrolly-graphic.active {
+            opacity: 1;
+            pointer-events: auto;
+            z-index: 1;
+        }
 
-body {
-    margin: 0;
-    font-size: 20px;
-    text-rendering: optimizeLegibility;
-}
+        .scrolly-image {
+            flex: 1;
+            position: relative;
+            height: 400px;
+            width: 100%;
+            align-self: flex-start;
+            margin-top: 2em;
+        }
 
-.main-content {
-    position: relative;
-    z-index: 5;
-    margin-top: 100vh;
-    background-color: #f7fffa; 
-    background-repeat: repeat;
-    background-attachment: scroll;
-    padding: 2em 0;
-}
+        @media (max-width: 768px) {
+            .scrolly-image {
+                height: 300px;
+            }
+        }
 
-.main-content p {
-    color: #2b2b2b;
-    font-size: 20px;
-}
+        .step {
+            margin-bottom: 70vh;
+            font-size: 1.5rem;
+            padding: 0.15em;
+            border-radius: 4px;
+        }
 
-.content p {
-  font-family: "Times New Roman", Times, serif !important;
-}
+        .step:last-child {
+            margin-bottom: 40vh;
+        }
 
-.subhead_2 {
-  font-size: 1.8rem;   
-  font-weight: 600;
-  margin-top: 2em;
-  margin-bottom: 0.6em;
-  line-height: 1.3;
-  color: #222; 
-}
-
-.content {
-    max-width: 640px;
-    margin: auto;
-    padding: 2em;
-}
-
-.header {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-}
-
-a {
-    color: #5b0101;
-}
-
-.footer {
-    background: #f4f4f4;
-    text-align: center;
-    font-size: 0.8em;
-    padding: 4em 0;
-    position: relative;
-    z-index: 5;
-}
-
-figure {
-    margin: 0;
-    padding-bottom: 1.2em;
-}
-
-figcaption {
-    font-size: 0.8em;
-    text-align: center;
-    margin-top: 0.5em;
-    color: #666;
-}
+        .scrolly-image {
+            position: sticky;
+            top: 20%;
+            height: 600px;
+            align-self: flex-start;
+        }
 
 
-.full-width figure {
-    text-align: center;
-}
+        .g-artboard {
+            max-width: 100%;
+            height: auto;
+        }
 
-iframe,
-img,
-video {
-    max-width: 100%;
-}
+        .g-artboard img {
+            max-width: 100%;
+            height: auto;
+        }
 
-p {
-    line-height: 1.6;
-    margin: 0;
-    padding-bottom: 1.2em;
-}
+        body {
+            margin: 0;
+            font-size: 20px;
+            text-rendering: optimizeLegibility;
+        }
 
-ul {
-    margin: 0;
-    padding-bottom: 1em;
-    line-height: 1.6;
-}
+        .main-content {
+            position: relative;
+            z-index: 5;
+            margin-top: 100vh;
+            background-color: #f7fffa;
+            background-repeat: repeat;
+            background-attachment: scroll;
+            padding: 2em 0;
+        }
 
-iframe {
-    padding-bottom: 1.2em;
-}
+        .main-content p {
+            color: #2b2b2b;
+            font-size: 20px;
+        }
 
-code {
-    background: #fff880;
-}
+        .content p {
+            font-family: "Times New Roman", Times, serif !important;
+        }
 
-@media (max-width: 640px) {
-    body {
-        font-size: 18px;
-    }
+        .subhead_2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 2em;
+            margin-bottom: 0.6em;
+            line-height: 1.3;
+            color: #222;
+        }
 
-    .content {
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-    }
-}
+        .content {
+            max-width: 640px;
+            margin: auto;
+            padding: 2em;
+        }
 
-    .content .datawrapper-container {
-        max-width: 120%;
-        width: 120%;
-        margin-left: -10%;
-    }
+        .header {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        a {
+            color: #5b0101;
+        }
+
+        .footer {
+            background: #f4f4f4;
+            text-align: center;
+            font-size: 0.8em;
+            padding: 4em 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        figure {
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        figcaption {
+            font-size: 0.8em;
+            text-align: center;
+            margin-top: 0.5em;
+            color: #666;
+        }
+
+
+        .full-width figure {
+            text-align: center;
+        }
+
+        iframe,
+        img,
+        video {
+            max-width: 100%;
+        }
+
+        p {
+            line-height: 1.6;
+            margin: 0;
+            padding-bottom: 1.2em;
+        }
+
+        ul {
+            margin: 0;
+            padding-bottom: 1em;
+            line-height: 1.6;
+        }
+
+        iframe {
+            padding-bottom: 1.2em;
+        }
+
+        code {
+            background: #fff880;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                font-size: 18px;
+            }
+
+            .content {
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+            }
+        }
+
+        .content .datawrapper-container {
+            max-width: 120%;
+            width: 120%;
+            margin-left: -10%;
+        }
     </style>
     <style>
-
-
-    .g-ai2html-settings {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: rgb(255,255,0);
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-    }
-
-#g-ai0-1 {
-    top: 200%; 
-    left: 15.3508%;
-   
-}
-
-#g-ai0-2 {
-    top: 18%; 
-    
-}
-
-#g-ai1-1 {
-    top: 15%; /
-    /
-}
-
-#g-ai1-2 {
-    top: 20%; 
-    
-}
-
-#g-ai2-1 {
-    top: 20%; 
-    
-}
-
-#g-ai2-2 {
-    top: 30%; 
-}
-
-
-
-    @media (max-width: 489px) {
-        #g-map_1-full,
-        #g-map_1-medium,
-        #g-map-full,
-        #g-map-medium {
-        display: none;
+        .g-ai2html-settings {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgb(255, 255, 0);
+            font-weight: bold;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         }
-    }
 
-    @media (min-width: 490px) and (max-width: 699px) {
-        #g-map_1-full,
-        #g-map_1-mobile,
-        #g-map-full,
-        #g-map-mobile {
-        display: none;
-        }
-    }
+        #g-ai0-1 {
+            top: 200%;
+            left: 15.3508%;
 
-    @media (min-width: 700px) {
-        #g-map_1-medium,
-        #g-map_1-mobile,
-        #g-map-medium,
-        #g-map-mobile {
-        display: none;
         }
-    }
+
+        #g-ai0-2 {
+            top: 18%;
+
+        }
+
+        #g-ai1-1 {
+            top: 15%;/ /
+        }
+
+        #g-ai1-2 {
+            top: 20%;
+
+        }
+
+        #g-ai2-1 {
+            top: 20%;
+
+        }
+
+        #g-ai2-2 {
+            top: 30%;
+        }
+
+
+
+        @media (max-width: 489px) {
+
+            #g-map_1-full,
+            #g-map_1-medium,
+            #g-map-full,
+            #g-map-medium {
+                display: none;
+            }
+        }
+
+        @media (min-width: 490px) and (max-width: 699px) {
+
+            #g-map_1-full,
+            #g-map_1-mobile,
+            #g-map-full,
+            #g-map-mobile {
+                display: none;
+            }
+        }
+
+        @media (min-width: 700px) {
+
+            #g-map_1-medium,
+            #g-map_1-mobile,
+            #g-map-medium,
+            #g-map-mobile {
+                display: none;
+            }
+        }
 
         .video-container {
             position: fixed;
@@ -536,16 +573,17 @@ code {
             object-fit: cover;
         }
 
-        html, body {
+        html,
+        body {
             margin: 0;
             padding: 0;
             height: 100%;
         }
 
-        
+
         .title-container {
             position: fixed;
-            bottom: 100px; 
+            bottom: 100px;
             left: 50px;
             z-index: 2;
             max-width: 70%;
@@ -553,14 +591,14 @@ code {
         }
 
         .subhead {
-            font-size: 1.8rem;   
+            font-size: 1.8rem;
             font-weight: 600;
             margin-top: 2em;
             margin-bottom: 0.6em;
             line-height: 1.3;
-            color: #222; 
+            color: #222;
         }
-        
+
 
         .category-label {
             font-family: 'Inter', sans-serif;
@@ -586,63 +624,66 @@ code {
         }
 
         .main-content {
-          position: relative;
-          z-index: 5;
-          margin-top: 100vh;
-          background-color: whitesmoke; 
-          background-repeat: repeat;
-          background-attachment: scroll;
-          padding: 2em 0;
-          padding-bottom: 4em;
+            position: relative;
+            z-index: 5;
+            margin-top: 100vh;
+            background-color: whitesmoke;
+            background-repeat: repeat;
+            background-attachment: scroll;
+            padding: 2em 0;
+            padding-bottom: 4em;
         }
 
         @media (max-width: 640px) {
             .title-container {
-                bottom: 80px; 
+                bottom: 80px;
                 left: 30px;
                 max-width: 80%;
             }
-            
+
             .category-label {
                 font-size: 0.8rem;
                 margin-bottom: 10px;
                 font-family: 'Inter', sans-serif
             }
-            
+
             .fixed-title {
                 font-size: 2rem;
             }
         }
-            .left-content { 
-            font-size: 1.8rem;   
+
+        .left-content {
+            font-size: 1.8rem;
             font-weight: 600;
             margin-top: 2em;
             margin-bottom: 0.6em;
             line-height: 1.3;
-            color: #222; 
-         }
-      .video-credit {
-          font-size: 1.0rem;
-          color: #000;
-          font-family: 'Inter', sans-serif;
-          margin: 1em auto 2em auto;
-          text-align: center;
-          max-width: 640px;
-          opacity: 0.8;
-      }
+            color: #222;
+        }
+
+        .video-credit {
+            font-size: 1.0rem;
+            color: #000;
+            font-family: 'Inter', sans-serif;
+            margin: 1em auto 2em auto;
+            text-align: center;
+            max-width: 640px;
+            opacity: 0.8;
+        }
+
         .datawrapper-container {
             width: 100%;
             margin: 0 auto;
             position: relative;
-            overflow: visible; 
+            overflow: visible;
         }
 
         .datawrapper-container iframe {
-            width: 100%; 
-            min-width: 100%; 
-            max-width: none; 
+            width: 100%;
+            min-width: 100%;
+            max-width: none;
             margin-left: 50%;
-            transform: translateX(-50%); 
+            transform: translateX(-50%);
             display: block;
             padding-bottom: 1.2em;
         }
@@ -650,19 +691,19 @@ code {
 
         @media (min-width: 768px) {
             .datawrapper-container iframe {
-                width: 120%; 
+                width: 120%;
             }
         }
 
         @media (min-width: 992px) {
             .datawrapper-container iframe {
-                width: 140%; 
+                width: 140%;
             }
         }
 
         @media (min-width: 1200px) {
             .datawrapper-container iframe {
-                width: 160%; 
+                width: 160%;
             }
         }
     </style>
@@ -671,7 +712,7 @@ code {
 
 <body>
     <div class="video-container">
-        <video src="video.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+        <video src="1_cleaner_video" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
     </div>
 
     <div class="title-container">
@@ -689,95 +730,141 @@ code {
                 <p></p>
             </div>
             <p>By <a href="https://ananyabchetia.github.io/">Ananya Chetia</a></p>
-            <p>Oregon native Arjorie Arberry-Baribeault always had a razor sharp eye for styling hair. But when her daughter Zion was
-            diagnosed with cancer at thirteen years old, followed by her best friend's son a few years later with the same
-            diagnoses, Baribeault left the beauty industry for good in 2020 to investigate why.</p>
-            <p>“Doing hair wasn't fun after my daughter started to lose her hair, I didn't care what anybody's hair was doing. I didn't
-            care if it was thin on this part, or if they didn't like the color, if it was graying too fast, I didn't care about
-            that,” Baribeault said. “It's not fair to do that to my clients.”</p>
-            <p>Bairibeault dug for answers online and discovered JH Baxter — a wood treatment facility in West Eugene, Oregon using wood
-            preservatives like creosote, pentachlorophenol and arsenate threatening to one's respiratory system and organs. She and
-            her family lived near JH Baxter, along with eight other industrial sites for years.</p>
-            <p>Oregon's <a href="https://www.oregon.gov/oha/ph/healthyenvironments/trackingassessment/environmentalhealthassessment/pages/bxsite.aspx?utm_source=oha&utm_medium=egov_redirect&utm_campaign=https%3a%2f%2fwww.oregon.gov%2fjhbaxter">Environmental Health Assessment Program</a> found that cases of hodgkin's lymphoma, the cancer Zion had, was
-            slightly higher in neighborhoods surrounding JH Baxter compared to the county or state in 2008.</p>
-            <p>Today, Zion is cancer free, and JH Baxter pleaded guilty in January to emitting hazardous waste beyond the limits set by
-            the Clean Air Act and without a permit, a violation of the Resource Conservation and Recovery Act. The company's
-            president, 61-year-old <a href="https://www.justice.gov/opa/pr/companies-and-president-operating-oregon-wood-treatment-facility-pay-15m-criminal-fines">Georgia Baxter-Krause</a> also pleaded guilty to making false statements to Oregon inspectors on how
-            the facility handled releasing hazardous waste and was ordered to pay $1.5 million in fines.</p>
-            <p>Judge Michael McShane sentenced Baxter-Krause to 90 days on April 22. Baxtet said she was ashamed many times and felt
-            remorse everyday at the sentencing. She apologized to Bethel residents, the neighborhood across from JH Baxter, and
-            admitted she needed to be more honest with regulators, said journalist Brian Bull, who attended the sentencing.</p>
-            <p>West Eugene resident Lisa Dion said she couldn't feel her feet after hearing the weak sentence and a rush of “anxiety,
-            nervousness, anger, sadness, frustration and confusion” kicked in. McShane said a causal link between Baxter plant
-            emissions and health issues from locals could not be established, according to reporting from <a href="https://www.klcc.org/breaking/2025-04-22/president-of-j-h-baxter-sentenced-to-90-days-in-jail">KLCC</a>.</p>
-            <p>Lisa's husband, Eric, is in treatment for diffuse leptomeningeal glioneuronal tumor, a rare slow growing brain tumor
-            that mostly affects children for the last three years.</p>
-            <p>The couple are convinced living next to the facility led to Eric's cancer. Eric, who grew up right across the facility,
-            still remembers the pungent odor stinging from JH Baxter in the 1980s.</p>
+            <p>Oregon native Arjorie Arberry-Baribeault always had a razor sharp eye for styling hair. But when her
+                daughter Zion was
+                diagnosed with cancer at thirteen years old, followed by her best friend's son a few years later with
+                the same
+                diagnoses, Baribeault left the beauty industry for good in 2020 to investigate why.</p>
+            <p>“Doing hair wasn't fun after my daughter started to lose her hair, I didn't care what anybody's hair was
+                doing. I didn't
+                care if it was thin on this part, or if they didn't like the color, if it was graying too fast, I didn't
+                care about
+                that,” Baribeault said. “It's not fair to do that to my clients.”</p>
+            <p>Bairibeault dug for answers online and discovered JH Baxter — a wood treatment facility in West Eugene,
+                Oregon using wood
+                preservatives like creosote, pentachlorophenol and arsenate threatening to one's respiratory system and
+                organs. She and
+                her family lived near JH Baxter, along with eight other industrial sites for years.</p>
+            <p>Oregon's <a
+                    href="https://www.oregon.gov/oha/ph/healthyenvironments/trackingassessment/environmentalhealthassessment/pages/bxsite.aspx?utm_source=oha&utm_medium=egov_redirect&utm_campaign=https%3a%2f%2fwww.oregon.gov%2fjhbaxter">Environmental
+                    Health Assessment Program</a> found that cases of hodgkin's lymphoma, the cancer Zion had, was
+                slightly higher in neighborhoods surrounding JH Baxter compared to the county or state in 2008.</p>
+            <p>Today, Zion is cancer free, and JH Baxter pleaded guilty in January to emitting hazardous waste beyond
+                the limits set by
+                the Clean Air Act and without a permit, a violation of the Resource Conservation and Recovery Act. The
+                company's
+                president, 61-year-old <a
+                    href="https://www.justice.gov/opa/pr/companies-and-president-operating-oregon-wood-treatment-facility-pay-15m-criminal-fines">Georgia
+                    Baxter-Krause</a> also pleaded guilty to making false statements to Oregon inspectors on how
+                the facility handled releasing hazardous waste and was ordered to pay $1.5 million in fines.</p>
+            <p>Judge Michael McShane sentenced Baxter-Krause to 90 days on April 22. Baxtet said she was ashamed many
+                times and felt
+                remorse everyday at the sentencing. She apologized to Bethel residents, the neighborhood across from JH
+                Baxter, and
+                admitted she needed to be more honest with regulators, said journalist Brian Bull, who attended the
+                sentencing.</p>
+            <p>West Eugene resident Lisa Dion said she couldn't feel her feet after hearing the weak sentence and a rush
+                of “anxiety,
+                nervousness, anger, sadness, frustration and confusion” kicked in. McShane said a causal link between
+                Baxter plant
+                emissions and health issues from locals could not be established, according to reporting from <a
+                    href="https://www.klcc.org/breaking/2025-04-22/president-of-j-h-baxter-sentenced-to-90-days-in-jail">KLCC</a>.
+            </p>
+            <p>Lisa's husband, Eric, is in treatment for diffuse leptomeningeal glioneuronal tumor, a rare slow growing
+                brain tumor
+                that mostly affects children for the last three years.</p>
+            <p>The couple are convinced living next to the facility led to Eric's cancer. Eric, who grew up right across
+                the facility,
+                still remembers the pungent odor stinging from JH Baxter in the 1980s.</p>
             <p>“I paid no attention to it,” Eric said about the smell.</p>
-            <p>JH Baxter violated environmental regulations for decades but was only charged based on actions committed between Jan 2,
-            2019 and Oct 6, 2019. There are over 20 instances where three environmental agencies warned JH Baxter for going against
-            air and water quality standards and hazardous waste regulations, according to a timeline from <a ahref="https://storymaps.arcgis.com/stories/61e11e3a99a54ff784a68ffacaccffcc">Oregon State University's</a>
-            research team. Nearby residents filed over three thousand complaints between 2002 to 2022 about the pungent odor
-            stinging from Baxter's facility.</p>
-       <div class="datawrapper-container">
-        <iframe title="JH Baxter odor sparked over 3300 complaints in the last 45 years " aria-label="Bar Chart"
-            id="datawrapper-chart-FqjUA" src="https://datawrapper.dwcdn.net/FqjUA/4/" scrolling="no" frameborder="0"
-            style="width: 0; min-width: 100% !important; border: none;" height="1436" data-external="1"></iframe>
-        <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
-        </script>
+            <p>JH Baxter violated environmental regulations for decades but was only charged based on actions committed
+                between Jan 2,
+                2019 and Oct 6, 2019. There are over 20 instances where three environmental agencies warned JH Baxter
+                for going against
+                air and water quality standards and hazardous waste regulations, according to a timeline from <a
+                    ahref="https://storymaps.arcgis.com/stories/61e11e3a99a54ff784a68ffacaccffcc">Oregon State
+                    University's</a>
+                research team. Nearby residents filed over three thousand complaints between 2002 to 2022 about the
+                pungent odor
+                stinging from Baxter's facility.</p>
+            <div class="datawrapper-container">
+                <iframe title="JH Baxter odor sparked over 3300 complaints in the last 45 years " aria-label="Bar Chart"
+                    id="datawrapper-chart-FqjUA" src="https://datawrapper.dwcdn.net/FqjUA/4/" scrolling="no"
+                    frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="1436"
+                    data-external="1"></iframe>
+                <script type="text/javascript">!function () { "use strict"; window.addEventListener("message", (function (a) { if (void 0 !== a.data["datawrapper-height"]) { var e = document.querySelectorAll("iframe"); for (var t in a.data["datawrapper-height"]) for (var r, i = 0; r = e[i]; i++)if (r.contentWindow === a.source) { var d = a.data["datawrapper-height"][t] + "px"; r.style.height = d } } })) }();
+                </script>
+            </div>
+            <p>Two class action lawsuits were also filed in 2023, which includes “thousands of clients from the West
+                Eugene area
+                around
+                JH Baxter, whose health or properties were allegedly affected by its operations,” according to reporting
+                from
+                <a
+                    href="https://www.klcc.org/crime-law-justice/2023-05-02/lawsuits-against-j-h-baxter-advance-but-questions-hover-over-companys-fiscal-status-and-assets">KLCC</a>.
+            </p>
         </div>
-        <p>Two class action lawsuits were also filed in 2023, which includes “thousands of clients from the West Eugene area
-            around
-            JH Baxter, whose health or properties were allegedly affected by its operations,” according to reporting from
-            <a
-                href="https://www.klcc.org/crime-law-justice/2023-05-02/lawsuits-against-j-h-baxter-advance-but-questions-hover-over-companys-fiscal-status-and-assets">KLCC</a>.
-        </p>
-        </div>
-        <div class="scrolly-container"> 
+        <div class="scrolly-container">
             <div class="scrolly-text">
                 <h2 class="subhead">The truth behind JH Baxter</h2>
                 <div class="step" data-index="0">
-                    <p>JH Baxter is a 205 acre wood treatment site in West Eugene, Oregon that treated wood products like railroad ties,
-                    utility poles and crossarms for 79 years until 2022.</p>
+                    <p>JH Baxter is a 205 acre wood treatment site in West Eugene, Oregon that treated wood products
+                        like railroad ties,
+                        utility poles and crossarms for 79 years until 2022.</p>
                 </div>
                 <div class="step" data-index="1">
-                    <p>North of JH Baxter is the Bethel neighborhood where Eric was raised. The poverty rate is over 20% in Bethel and the
-                    median household income is $42,500, over $20,000 less than the median household income for Eugene city.</p>
-                    <p>Several schools are within three miles of the site. Students from Kalapuya High School have come to classes with hives,
-                    rashes and asthma, said Kelly Ferguson, a high school biology teacher.</p>
-                    <p>Ferguson uses self-reported data and research produced from state nonprofit Beyond Toxics Waste to teach her students on
-                    the impact the site has had on the surrounding area for decades. But with the Trump administration removing the
-                    environmental justice screening tool, Ferguson said it has been difficult to show how JH Baxter impacts the surrounding
-                    area.</p>
-                    <p>“We have a basic right to clean air, soil and water. That's our human right,” Ferguson said. She is finding
-                    alternative websites and spatial tools that replicate the EJ screening tool for her students.</p>
+                    <p>North of JH Baxter is the Bethel neighborhood where Eric was raised. The poverty rate is over 20%
+                        in Bethel and the
+                        median household income is $42,500, over $20,000 less than the median household income for
+                        Eugene city.</p>
+                    <p>Several schools are within three miles of the site. Students from Kalapuya High School have come
+                        to classes with hives,
+                        rashes and asthma, said Kelly Ferguson, a high school biology teacher.</p>
+                    <p>Ferguson uses self-reported data and research produced from state nonprofit Beyond Toxics Waste
+                        to teach her students on
+                        the impact the site has had on the surrounding area for decades. But with the Trump
+                        administration removing the
+                        environmental justice screening tool, Ferguson said it has been difficult to show how JH Baxter
+                        impacts the surrounding
+                        area.</p>
+                    <p>“We have a basic right to clean air, soil and water. That's our human right,” Ferguson said. She
+                        is finding
+                        alternative websites and spatial tools that replicate the EJ screening tool for her students.
+                    </p>
                 </div>
             </div>
             <div class="scrolly-image">
                 <div class="scrolly-graphic active" data-index="0">
                     <div id="g-map_1-box" class="ai2html">
-                        <div id="g-map_1-full" class="g-artboard" style="width:700px; height:599.4px;" data-aspect-ratio="1.167" data-min-width="700">
+                        <div id="g-map_1-full" class="g-artboard" style="width:700px; height:599.4px;"
+                            data-aspect-ratio="1.167" data-min-width="700">
                             <div style=""></div>
-                            <img id="g-map_1-full-img" class="g-map_1-full-img g-aiImg" alt="" src="map_1-full.jpg"/>
-                            <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 54.4640640186756%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 54.4640640186756%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 54.4640640186756%;top:15%;margin-top:-11.2px;left:15.3508%;margin-left:-9.5%;width:19%;">
+                            <img id="g-map_1-full-img" class="g-map_1-full-img g-aiImg" alt="" src="map_1-full.jpg" />
+                            <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs"
+                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 54.4640640186756%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 54.4640640186756%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 54.4640640186756%;top:15%;margin-top:-11.2px;left:15.3508%;margin-left:-9.5%;width:19%;">
                                 <p class="g-pstyle0">J H Baxter</p>
                             </div>
                         </div>
-                        
-                        <div id="g-map_1-medium" class="g-artboard" style="width:490px; height:409.5px;" data-aspect-ratio="1.197" data-min-width="490" data-max-width="699">
+
+                        <div id="g-map_1-medium" class="g-artboard" style="width:490px; height:409.5px;"
+                            data-aspect-ratio="1.197" data-min-width="490" data-max-width="699">
                             <div style=""></div>
-                            <img id="g-map_1-medium-img" class="g-map_1-medium-img g-aiImg" alt="" src="map_1-medium.jpg"/>
-                            <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:37.8233%;margin-top:-9.9px;left:22.0354%;margin-left:-13.4694%;width:26.9388%;">
+                            <img id="g-map_1-medium-img" class="g-map_1-medium-img g-aiImg" alt=""
+                                src="map_1-medium.jpg" />
+                            <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs"
+                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:37.8233%;margin-top:-9.9px;left:22.0354%;margin-left:-13.4694%;width:26.9388%;">
                                 <p class="g-pstyle0">J H Baxter</p>
                             </div>
                         </div>
-                        
-                      
-                        <div id="g-map_1-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px" data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
+
+
+                        <div id="g-map_1-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px"
+                            data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
                             <div style="padding: 0 0 125.5467% 0;"></div>
-                            <img id="g-map_1-mobile-img" class="g-map_1-mobile-img g-aiImg" alt="" src="map_1-mobile.jpg"/>
-                            <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:46.2801%;margin-top:-9.9px;left:24.271%;margin-left:-17.6%;width:35.2%;">
+                            <img id="g-map_1-mobile-img" class="g-map_1-mobile-img g-aiImg" alt=""
+                                src="map_1-mobile.jpg" />
+                            <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs"
+                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:46.2801%;margin-top:-9.9px;left:24.271%;margin-left:-17.6%;width:35.2%;">
                                 <p class="g-pstyle0">J H Baxter</p>
                             </div>
                         </div>
@@ -785,38 +872,47 @@ code {
                 </div>
                 <div class="scrolly-graphic" data-index="1">
                     <div id="g-map-box" class="ai2html">
-                    
-                    <div id="g-map-full" class="g-artboard" style="width:700px; height:599.4px;" data-aspect-ratio="1.167" data-min-width="700">
-                        <div style=""></div>
-                                <img id="g-map-full-img" class="g-map-full-img g-aiImg" alt="" src="map-full.jpg"/>
-                                <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 60% 54.4640640186756%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 90% 54.4640640186756%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 54.4640640186756%;top:13%;margin-top:-11.2px;left:12.51%;margin-left:-9.5%;width:19%;">
-                                    <p class="g-pstyle0"></p>
-                                </div>
-                                <div id="g-ai0-2" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);transform-origin: 50% 53.2456462694575%;-webkit-transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);-webkit-transform-origin: 50% 53.2456462694575%;-ms-transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);-ms-transform-origin: 50% 53.2456462694575%;top:23.5%;margin-top:-23.4px;left:78%;margin-left:-30%;width:62%;">
-                                    <p class="g-pstyle1"> Bethel Neighborhood</p>
-                                </div>
-                            </div>
-        
 
-                        <div id="g-map-medium" class="g-artboard" style="width:490px; height:409.5px;" data-aspect-ratio="1.197" data-min-width="490" data-max-width="632">
+                        <div id="g-map-full" class="g-artboard" style="width:700px; height:599.4px;"
+                            data-aspect-ratio="1.167" data-min-width="700">
                             <div style=""></div>
-                            <img id="g-map-medium-img" class="g-map-medium-img g-aiImg" alt="" src="map-medium.jpg"/>
-                            <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);transform-origin: 50% 53.7825192413527%;-webkit-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-webkit-transform-origin: 50% 53.7825192413527%;-ms-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-ms-transform-origin: 50% 53.7825192413527%;top:15%;margin-top:-13.2px;left:74.1697%;margin-left:-21.4286%;width:42.8571%;">
-                                <p class="g-pstyle0"><span class="g-cstyle0"> </span>Bethel Neighborhood</p>
+                            <img id="g-map-full-img" class="g-map-full-img g-aiImg" alt="" src="map-full.jpg" />
+                            <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs"
+                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 60% 54.4640640186756%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 90% 54.4640640186756%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 54.4640640186756%;top:13%;margin-top:-11.2px;left:12.51%;margin-left:-9.5%;width:19%;">
+                                <p class="g-pstyle0"></p>
                             </div>
-                            <div id="g-ai1-2" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:12%;margin-top:-9.9px;left:22.0354%;margin-left:-13.4694%;width:26.9388%;">
-                                <p class="g-pstyle1">J H  Baxter </p>
+                            <div id="g-ai0-2" class="g-ai2html-settings g-aiAbs"
+                                style="transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);transform-origin: 50% 53.2456462694575%;-webkit-transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);-webkit-transform-origin: 50% 53.2456462694575%;-ms-transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);-ms-transform-origin: 50% 53.2456462694575%;top:23.5%;margin-top:-23.4px;left:78%;margin-left:-30%;width:62%;">
+                                <p class="g-pstyle1"> Bethel Neighborhood</p>
                             </div>
                         </div>
-        
-                        <div id="g-map-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px" data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
+
+
+                        <div id="g-map-medium" class="g-artboard" style="width:490px; height:409.5px;"
+                            data-aspect-ratio="1.197" data-min-width="490" data-max-width="632">
+                            <div style=""></div>
+                            <img id="g-map-medium-img" class="g-map-medium-img g-aiImg" alt="" src="map-medium.jpg" />
+                            <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs"
+                                style="transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);transform-origin: 50% 53.7825192413527%;-webkit-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-webkit-transform-origin: 50% 53.7825192413527%;-ms-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-ms-transform-origin: 50% 53.7825192413527%;top:15%;margin-top:-13.2px;left:74.1697%;margin-left:-21.4286%;width:42.8571%;">
+                                <p class="g-pstyle0"><span class="g-cstyle0"> </span>Bethel Neighborhood</p>
+                            </div>
+                            <div id="g-ai1-2" class="g-ai2html-settings g-aiAbs"
+                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:12%;margin-top:-9.9px;left:22.0354%;margin-left:-13.4694%;width:26.9388%;">
+                                <p class="g-pstyle1">J H Baxter </p>
+                            </div>
+                        </div>
+
+                        <div id="g-map-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px"
+                            data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
                             <div style="padding: 0 0 125.5467% 0;"></div>
-                            <img id="g-map-mobile-img" class="g-map-mobile-img g-aiImg" alt="" src="map-mobile.jpg"/>
-                            <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);transform-origin: 50% 54.7885179259608%;-webkit-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-webkit-transform-origin: 50% 54.7885179259608%;-ms-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-ms-transform-origin: 50% 54.7885179259608%;top:20%;margin-top:-10.4px;left:67.6316%;margin-left:-28%;width:56%;">
+                            <img id="g-map-mobile-img" class="g-map-mobile-img g-aiImg" alt="" src="map-mobile.jpg" />
+                            <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs"
+                                style="transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);transform-origin: 50% 54.7885179259608%;-webkit-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-webkit-transform-origin: 50% 54.7885179259608%;-ms-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-ms-transform-origin: 50% 54.7885179259608%;top:20%;margin-top:-10.4px;left:67.6316%;margin-left:-28%;width:56%;">
                                 <p class="g-pstyle0"> Bethel Neighborhood</p>
                             </div>
-                            <div id="g-ai2-2" class="g-ai2html-settings g-aiAbs" style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:30%;margin-top:-9.9px;left:24.271%;margin-left:-17.6%;width:35.2%;">
-                                <p class="g-pstyle1">J H  Baxter </p>
+                            <div id="g-ai2-2" class="g-ai2html-settings g-aiAbs"
+                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:30%;margin-top:-9.9px;left:24.271%;margin-left:-17.6%;width:35.2%;">
+                                <p class="g-pstyle1">J H Baxter </p>
                             </div>
                         </div>
                     </div>
@@ -824,91 +920,112 @@ code {
             </div>
         </div>
         <div class="content">
-                <p>A 2023 <a href="https://www.oregon.gov/deq/Programs/Documents/JHBMeetingsummary071223.pdf">report from the Oregon
-                        Department of Environmental Quality (DEQ) and the U.S. Environmental Protection Agency (EPA)</a> found that
-                    seven residential yards had soil “with dioxin concentrations over 40 parts per trillion (ppt).” This meant children
-                    under six years old in contact with bare soil for a year or longer were at high risk. DEQ found an additional four
-                    more yards with dangerous levels of dioxin concentration a year later.</p>
-                <p>“DEQ has completed residential yard cleanup at seven of the 11 yards identified,” said Dylan Darlings, public affairs
-                    specialist at the DEQ.</p>
-                <p>The DEQ has spent about $2.6 million on cleaning up yards and all activities related to it, Darlings said. The agency
-                    relied on the Orphan Fund, which is used to cover the clean up costs. But JH Baxter is the responsible party for the
-                    cleanup and has been billed to pay, Darlings said. The site also owes over $350,000 in fines to the agency which 
-                    increases with interest.</p>
-                <p>JH Baxter's recent case focused on none of this. The court found that JH Baxter transferred wastewater to a wood
-                    treatment retort to "boil it off” between January 2, 2019, to October 6, 2019 and would send the remaining waste to
-                    an
-                    offsite for disposal. The site did not have the permit to remove the waste which violated the Resource Conservation
-                    and
-                    Recovery Act.</p>
-                <p><a
-                        href="https://www.klcc.org/environment/2025-01-23/j-h-baxter-and-its-president-plead-guilty-to-environmental-violations-lying-to-federal-regulators?utm_source=chatgpt.com">Retorts</a>
-                    are cylindrical vessels where chemicals are forced into the wood to preserve the material and make it resistant
-                    to insects.The wastewater would discharge into the air which meant the facility dismissed the Clean Air Act
-                    emissions
-                    standards for hazardous air pollutants, according to court records.</p>
-                <p>When the DEQ asked how many times JH Baxter used the retorts and requested for a documented record of the process,
-                    Baxter-Krause falsely wrote back that "[J.H.] Baxter does not have specific dates when this practice occurred.”</p>
-                <p>The court found employees actually “maintained detailed daily production logs for each retort,” and the facility
-                    boiled off hazardous waste for 136 known days using multiple retorts.Baxter-Krause previously emailed only one
-                    retort
-                    was used.</p>
-                <p>The <a href="https://www.epa.gov/or/jh-baxter-wood-treating-facility-cleanup-investigation">EPA proposed</a> JH
-                    Baxter to be on EPA's Superfund's National Priority List last September, a list of hazardous waste
-                    sites that are considered to be the nation's most serious uncontrolled or abandoned releases of contamination.</p>
-                <p>The agency can use federal funding called superfund for cleanup and enforcement on hazardous sites. The boundary of
-                    the
-                    superfund site can extend beyond JH Baxter but it is too early to say whether homes will be in the site boundary
-                    right
-                    now, said Alice Corcoran, a public affairs specialist with the EPA.</p>
-            </div>
-          </div>
-        <div class="footer">
-            <div class="content">
-                <p>All satellite images, including the screen recording of JH Baxter site, are from Google Earth.</p>
-                <p>Ananya Chetia is a data journalist at Columbia University. Check out the code for this story <a
-                  href="https://github.com/ananyabchetia/contaminated/">here</a></p>
-            </div>
+            <p>A 2023 <a href="https://www.oregon.gov/deq/Programs/Documents/JHBMeetingsummary071223.pdf">report from
+                    the Oregon
+                    Department of Environmental Quality (DEQ) and the U.S. Environmental Protection Agency (EPA)</a>
+                found that
+                seven residential yards had soil “with dioxin concentrations over 40 parts per trillion (ppt).” This
+                meant children
+                under six years old in contact with bare soil for a year or longer were at high risk. DEQ found an
+                additional four
+                more yards with dangerous levels of dioxin concentration a year later.</p>
+            <p>“DEQ has completed residential yard cleanup at seven of the 11 yards identified,” said Dylan Darlings,
+                public affairs
+                specialist at the DEQ.</p>
+            <p>The DEQ has spent about $2.6 million on cleaning up yards and all activities related to it, Darlings
+                said. The agency
+                relied on the Orphan Fund, which is used to cover the clean up costs. But JH Baxter is the responsible
+                party for the
+                cleanup and has been billed to pay, Darlings said. The site also owes over $350,000 in fines to the
+                agency which
+                increases with interest.</p>
+            <p>JH Baxter's recent case focused on none of this. The court found that JH Baxter transferred wastewater to
+                a wood
+                treatment retort to "boil it off” between January 2, 2019, to October 6, 2019 and would send the
+                remaining waste to
+                an
+                offsite for disposal. The site did not have the permit to remove the waste which violated the Resource
+                Conservation
+                and
+                Recovery Act.</p>
+            <p><a
+                    href="https://www.klcc.org/environment/2025-01-23/j-h-baxter-and-its-president-plead-guilty-to-environmental-violations-lying-to-federal-regulators?utm_source=chatgpt.com">Retorts</a>
+                are cylindrical vessels where chemicals are forced into the wood to preserve the material and make it
+                resistant
+                to insects.The wastewater would discharge into the air which meant the facility dismissed the Clean Air
+                Act
+                emissions
+                standards for hazardous air pollutants, according to court records.</p>
+            <p>When the DEQ asked how many times JH Baxter used the retorts and requested for a documented record of the
+                process,
+                Baxter-Krause falsely wrote back that "[J.H.] Baxter does not have specific dates when this practice
+                occurred.”</p>
+            <p>The court found employees actually “maintained detailed daily production logs for each retort,” and the
+                facility
+                boiled off hazardous waste for 136 known days using multiple retorts.Baxter-Krause previously emailed
+                only one
+                retort
+                was used.</p>
+            <p>The <a href="https://www.epa.gov/or/jh-baxter-wood-treating-facility-cleanup-investigation">EPA
+                    proposed</a> JH
+                Baxter to be on EPA's Superfund's National Priority List last September, a list of hazardous waste
+                sites that are considered to be the nation's most serious uncontrolled or abandoned releases of
+                contamination.</p>
+            <p>The agency can use federal funding called superfund for cleanup and enforcement on hazardous sites. The
+                boundary of
+                the
+                superfund site can extend beyond JH Baxter but it is too early to say whether homes will be in the site
+                boundary
+                right
+                now, said Alice Corcoran, a public affairs specialist with the EPA.</p>
         </div>
     </div>
+    <div class="footer">
+        <div class="content">
+            <p>All satellite images, including the screen recording of JH Baxter site, are from Google Earth.</p>
+            <p>Ananya Chetia is a data journalist at Columbia University. Check out the code for this story <a
+                    href="https://github.com/ananyabchetia/contaminated/">here</a></p>
+        </div>
+    </div>
+    </div>
 
-<script src="https://unpkg.com/scrollama"></script>
-<script>
-    function initScrollytelling() {
-  // Get all step elements
-  const steps = document.querySelectorAll('.step');
-  // Get all graphic elements
-  const graphics = document.querySelectorAll('.scrolly-graphic');
-  
-  // Set up IntersectionObserver
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      // If the step is in view
-      if (entry.isIntersecting) {
-        // Get the data-index attribute to match with corresponding graphic
-        const index = entry.target.dataset.index;
-        
-        // Remove active class from all graphics
-        graphics.forEach(g => g.classList.remove('active'));
-        
-        // Add active class to the matching graphic
-        const activeGraphic = document.querySelector(`.scrolly-graphic[data-index="${index}"]`);
-        if (activeGraphic) {
-          activeGraphic.classList.add('active');
+    <script src="https://unpkg.com/scrollama"></script>
+    <script>
+        function initScrollytelling() {
+            // Get all step elements
+            const steps = document.querySelectorAll('.step');
+            // Get all graphic elements
+            const graphics = document.querySelectorAll('.scrolly-graphic');
+
+            // Set up IntersectionObserver
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    // If the step is in view
+                    if (entry.isIntersecting) {
+                        // Get the data-index attribute to match with corresponding graphic
+                        const index = entry.target.dataset.index;
+
+                        // Remove active class from all graphics
+                        graphics.forEach(g => g.classList.remove('active'));
+
+                        // Add active class to the matching graphic
+                        const activeGraphic = document.querySelector(`.scrolly-graphic[data-index="${index}"]`);
+                        if (activeGraphic) {
+                            activeGraphic.classList.add('active');
+                        }
+                    }
+                });
+            }, {
+                // Configure the observer
+                threshold: 0.2, // Trigger when 70% of the step is visible
+                rootMargin: "-100px 0px -300px 0px"
+            });
+
+            // Observe all steps
+            steps.forEach(step => observer.observe(step));
         }
-      }
-    });
-  }, {
-    // Configure the observer
-    threshold: 0.2, // Trigger when 70% of the step is visible
-    rootMargin: "-100px 0px -300px 0px" 
-  });
-  
-  // Observe all steps
-  steps.forEach(step => observer.observe(step));
-}
 
-// Initialize when the page loads
-document.addEventListener('DOMContentLoaded', initScrollytelling);
-</script>
+        // Initialize when the page loads
+        document.addEventListener('DOMContentLoaded', initScrollytelling);
+    </script>
 </body>
