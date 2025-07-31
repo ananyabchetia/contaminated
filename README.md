@@ -16,7 +16,7 @@
 
 #### a. I spoke with school teacher Kelly Ferguson and local residents Lisa and Eric Dion. I plan to speak to climate activist Arjorie Arberry-Baribeault and a high school student this week.
 
-#### 4. Data component!!
+#### 4.  The data work led me to finding this hyper-local story: 
 
 #### a. I found a list of proposed and current Superfund sites in the National Priorities List by the Environmental Protection Agency. NPL (National Priorities List) Superfund sites are the most hazardous contaminated locations in the U.S.. The EPA identifies these sites for long-term cleanup due to the presence of toxic waste that poses a risk to human health or the environment. These sites are prioritized for federal funding and remediation under the Superfund program.
 
@@ -26,15 +26,9 @@
 
 ## Data visualization goals
 
-#### I had three main components I wanted to produce.
-
 #### a. Use satellite imagery to identify JH Baxter and Bethel neighborhood.
 
 #### i. To show the satellite images, I used scrollytelling here. I annotated the satellite images using Adobe Illustrator.
-
-#### b. I made a waffle chart/pictogram to show how many schools are near Superfund sites. The purpose of the pictogram was to show, a lot of schools are near these sites!
-
-#### i. I hand drew a school on ProCreate. From there, I used Adobe Illustrator to make the pictogram.
 
 ## Challenges
 
