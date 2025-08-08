@@ -1,14 +1,14 @@
 {
     "fonts": [
         {
-            "aifont": "Chalkduster",
-            "family": "Chalkduster",
+            "aifont": "NYTFranklin",
+            "family": "NYTFranklin",
             "weight": "400",
             "style": ""
         },
         {
-            "aifont": "Arial-Black",
-            "family": "Arial Black",
+            "aifont": "NYTFranklin",
+            "family": "NYTFranklin",
             "weight": "900",
             "style": ""
         }

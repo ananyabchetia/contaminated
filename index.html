@@ -2,265 +2,114 @@
 <html>
 
 <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Scrollama: Sticky Overlay Example" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contaminated site</title>
-
     <link rel="icon" type="image/png" href="tree.png">
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
     <style>
-        #g-map_1-box,
-        #g-map_1-box .g-artboard {
-            margin: 0 auto;
-        }
-
-        #g-map_1-box p {
+        body {
             margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
         }
 
-        #g-map_1-box .g-aiAbs {
-            position: absolute;
+        nav {
+            background: #601b1b;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
-        #g-map_1-box .g-aiImg {
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+
+        main {
+            margin-top: 60px;
+        }
+
+        #scrolly {
+            position: relative;
+            background-color: #f3f3f3;
+            padding: 1rem;
+        }
+
+        article {
+            position: relative;
+            padding: 0;
+            max-width: 20rem;
+            margin-left: 25rem;
+        }
+
+        .sticky-thing {
+            position: -webkit-sticky;
+            position: sticky;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            z-index: 0;
+            top: 12.5vh;
+            height: 90vh;
+            display: flex;
+            align-items: left;
+            justify-content: left;
+        }
+
+        .sticky-thing iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
             position: absolute;
             top: 0;
-            display: block;
-            width: 100% !important;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
 
-        #g-map_1-box .g-aiSymbol {
+        .sticky-thing iframe.active {
+            opacity: 1;
+        }
+
+        .sticky-thing p {
+            font-size: 8rem;
+            font-weight: 900;
+            color: #fff;
             position: absolute;
-            box-sizing: border-box;
+            z-index: 10;
         }
 
-        #g-map_1-box .g-aiPointText p {
-            white-space: nowrap;
+        .step {
+            color: #fff;
+            min-height: 400px;
+            margin: 0 auto 2rem auto;
         }
 
-        #g-map_1-full {
-            position: relative;
-            overflow: hidden;
+        .step:last-child {
+            margin-bottom: 0;
         }
 
-        #g-map_1-full p {
-            font-family: Chalkduster;
-            font-weight: regular;
-            line-height: 29px;
-            opacity: 1;
-            letter-spacing: 0em;
-            font-size: 24px;
+        .step.is-active p {
+            background-color: rgb(255, 255, 255);
+            color: #000000;
+        }
+
+        .step p {
             text-align: left;
-            color: rgb(255, 255, 0);
-            text-transform: none;
-            padding-bottom: 0;
-            padding-top: 0;
-            mix-blend-mode: normal;
-            font-style: normal;
-            height: auto;
-            position: static;
+            padding: 1rem;
+            font-size: 1.5rem;
+            background-color: #ffffff;
         }
 
-        #g-map_1-full .g-pstyle0 {
-            font-weight: 400;
-        }
-
-        #g-map_1-medium {
-            position: relative;
-            overflow: hidden;
-        }
-
-        #g-map_1-medium p {
-            font-family: Chalkduster;
-            font-weight: regular;
-            line-height: 22px;
-            opacity: 1;
-            letter-spacing: 0em;
-            font-size: 18px;
-            text-align: left;
-            color: rgb(255, 255, 0);
-            text-transform: none;
-            padding-bottom: 0;
-            padding-top: 0;
-            mix-blend-mode: normal;
-            font-style: normal;
-            height: auto;
-            position: static;
-        }
-
-        #g-map_1-medium .g-pstyle0 {
-            font-weight: 400;
-        }
-
-        #g-map_1-mobile {
-            position: relative;
-            overflow: hidden;
-        }
-
-        #g-map_1-mobile p {
-            font-family: Chalkduster;
-            font-weight: regular;
-            line-height: 22px;
-            opacity: 1;
-            letter-spacing: 0em;
-            font-size: 18px;
-            text-align: left;
-            color: rgb(255, 255, 0);
-            text-transform: none;
-            padding-bottom: 0;
-            padding-top: 0;
-            mix-blend-mode: normal;
-            font-style: normal;
-            height: auto;
-            position: static;
-        }
-
-        #g-map_1-mobile .g-pstyle0 {
-            font-weight: 400;
-        }
-
-        #g-map_1-Artboard_9 {
-            position: relative;
-            overflow: hidden;
-        }
-
-        #g-map-box,
-        #g-map-box .g-artboard {
-            margin: 0 auto;
-        }
-
-        #g-map-box p {
-            margin: 0;
-        }
-
-        #g-map-box .g-aiAbs {
-            position: absolute;
-        }
-
-        #g-map-box .g-aiImg {
-            position: absolute;
-            top: 0;
-            display: block;
-            width: 100% !important;
-        }
-
-        #g-map-box .g-aiSymbol {
-            position: absolute;
-            box-sizing: border-box;
-        }
-
-        #g-map-box .g-aiPointText p {
-            white-space: nowrap;
-        }
-
-        #g-map-full {
-            position: relative;
-            overflow: hidden;
-        }
-
-        #g-map-full p {
-            font-family: Chalkduster;
-            font-weight: regular;
-            line-height: 25px;
-            opacity: 1;
-            letter-spacing: 0em;
-            font-size: 21px;
-            text-align: left;
-            color: rgb(252, 255, 221);
-            text-transform: none;
-            padding-bottom: 0;
-            padding-top: 0;
-            mix-blend-mode: normal;
-            font-style: normal;
-            height: auto;
-            position: static;
-        }
-
-        #g-map-full .g-pstyle0 {
-            font-weight: 400;
-            color: rgb(255, 255, 0);
-        }
-
-        #g-map-full .g-pstyle1 {
-            font-weight: 400;
-        }
-
-        #g-map-medium {
-            position: relative;
-            overflow: hidden;
-        }
-
-        #g-map-medium p {
-            font-family: Chalkduster;
-            font-weight: regular;
-            line-height: 22px;
-            opacity: 1;
-            letter-spacing: 0em;
-            font-size: 16px;
-            text-align: left;
-            color: rgb(252, 255, 221);
-            text-transform: none;
-            padding-bottom: 0;
-            padding-top: 0;
-            mix-blend-mode: normal;
-            font-style: normal;
-            height: auto;
-            position: static;
-        }
-
-        #g-map-medium .g-pstyle0 {
-            font-weight: 400;
-        }
-
-        #g-map-medium .g-pstyle1 {
-            font-weight: 400;
-            font-size: 18px;
-            color: rgb(255, 255, 0);
-        }
-
-        #g-map-medium .g-cstyle0 {
-            font-size: 18px;
-        }
-
-        #g-map-mobile {
-            position: relative;
-            overflow: hidden;
-        }
-
-        #g-map-mobile p {
-            font-family: Chalkduster;
-            font-weight: regular;
-            line-height: 17px;
-            opacity: 1;
-            letter-spacing: 0em;
-            font-size: 14px;
-            text-align: left;
-            color: rgb(252, 255, 221);
-            text-transform: none;
-            padding-bottom: 0;
-            padding-top: 0;
-            mix-blend-mode: normal;
-            font-style: normal;
-            height: auto;
-            position: static;
-        }
-
-        #g-map-mobile .g-pstyle0 {
-            font-weight: 400;
-        }
-
-        #g-map-mobile .g-pstyle1 {
-            font-weight: 400;
-            line-height: 22px;
-            font-size: 18px;
-            color: rgb(255, 255, 0);
-        }
-
-        #g-map-Artboard_9 {
-            position: relative;
-            overflow: hidden;
+        #outro {
+            height: 100vh;
         }
 
         .scrolly-container {
@@ -801,122 +650,45 @@
                     href="https://www.klcc.org/crime-law-justice/2023-05-02/lawsuits-against-j-h-baxter-advance-but-questions-hover-over-companys-fiscal-status-and-assets">KLCC</a>.
             </p>
         </div>
-        <div class="scrolly-container">
-            <div class="scrolly-text">
-                <h2 class="subhead">The truth behind JH Baxter</h2>
-                <div class="step" data-index="0">
-                    <p>JH Baxter is a 205 acre wood treatment site in West Eugene, Oregon that treated wood products
-                        like railroad ties,
-                        utility poles and crossarms for 79 years until 2022.</p>
+        <main>
+            <section id="scrolly">
+                <div class="sticky-thing">
+                    <p></p>
+                    <iframe id="iframe1" src="../scrollytelling_images/design_1.html" frameborder="0"
+                        class="active"></iframe>
+                    <iframe id="iframe2" src="../scrollytelling_images/design_bethel.html" frameborder="0"></iframe>
+                    <iframe id="iframe3" src="../scrollytelling_images/zoomed_in_school copy.html"
+                        frameborder="0"></iframe>
                 </div>
-                <div class="step" data-index="1">
-                    <p>North of JH Baxter is the Bethel neighborhood where Eric was raised. The poverty rate is over 20%
-                        in Bethel and the
-                        median household income is $42,500, over $20,000 less than the median household income for
-                        Eugene city.</p>
-                    <p>Within three miles of the facility is Kalapuya High School, a public and alternative high school
-                        for students not succeeding at traditional schools. Students at Kalapuya have come
-                        to classes with hives,
-                        rashes and asthma, said Kelly Ferguson, the high school biology teacher there.</p>
-                    <p>Ferguson uses self-reported data and research produced from state nonprofit Beyond Toxics Waste
-                        to teach her students on
-                        the impact the site has had on the surrounding area for decades. But with the Trump
-                        administration removing the
-                        environmental justice screening tool, Ferguson said it has been difficult to show how JH Baxter
-                        impacts the surrounding
-                        area.</p>
-                    <p>“We have a basic right to clean air, soil and water. That's our human right,” Ferguson said. She
-                        is finding
-                        alternative websites and spatial tools that replicate the EJ screening tool for her students.
-                    </p>
-                </div>
-            </div>
-            <div class="scrolly-image">
-                <div class="scrolly-graphic active" data-index="0">
-                    <div id="g-map_1-box" class="ai2html">
-                        <div id="g-map_1-full" class="g-artboard" style="width:700px; height:599.4px;"
-                            data-aspect-ratio="1.167" data-min-width="700">
-                            <div style=""></div>
-                            <img id="g-map_1-full-img" class="g-map_1-full-img g-aiImg" alt="" src="map_1-full.jpg" />
-                            <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs"
-                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 54.4640640186756%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 54.4640640186756%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 54.4640640186756%;top:15%;margin-top:-11.2px;left:15.3508%;margin-left:-9.5%;width:19%;">
-                                <p class="g-pstyle0">J H Baxter</p>
-                            </div>
-                        </div>
 
-                        <div id="g-map_1-medium" class="g-artboard" style="width:490px; height:409.5px;"
-                            data-aspect-ratio="1.197" data-min-width="490" data-max-width="699">
-                            <div style=""></div>
-                            <img id="g-map_1-medium-img" class="g-map_1-medium-img g-aiImg" alt=""
-                                src="map_1-medium.jpg" />
-                            <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs"
-                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:37.8233%;margin-top:-9.9px;left:22.0354%;margin-left:-13.4694%;width:26.9388%;">
-                                <p class="g-pstyle0">J H Baxter</p>
-                            </div>
-                        </div>
-
-
-                        <div id="g-map_1-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px"
-                            data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
-                            <div style="padding: 0 0 125.5467% 0;"></div>
-                            <img id="g-map_1-mobile-img" class="g-map_1-mobile-img g-aiImg" alt=""
-                                src="map_1-mobile.jpg" />
-                            <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs"
-                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:46.2801%;margin-top:-9.9px;left:24.271%;margin-left:-17.6%;width:35.2%;">
-                                <p class="g-pstyle0">J H Baxter</p>
-                            </div>
-                        </div>
+                <article>
+                    <div class="step" data-step="" data-iframe="iframe1">
+                        <p>JH Baxter is a 205 acre wood treatment site in West Eugene, Oregon that treated wood products
+                            like
+                            railroad
+                            ties, utility poles and crossarms for 79 years until 2022.</p>
                     </div>
-                </div>
-                <div class="scrolly-graphic" data-index="1">
-                    <div id="g-map-box" class="ai2html">
-
-                        <div id="g-map-full" class="g-artboard" style="width:700px; height:599.4px;"
-                            data-aspect-ratio="1.167" data-min-width="700">
-                            <div style=""></div>
-                            <img id="g-map-full-img" class="g-map-full-img g-aiImg" alt="" src="map-full.jpg" />
-                            <div id="g-ai0-1" class="g-ai2html-settings g-aiAbs"
-                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 60% 54.4640640186756%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 90% 54.4640640186756%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 54.4640640186756%;top:13%;margin-top:-11.2px;left:12.51%;margin-left:-9.5%;width:19%;">
-                                <p class="g-pstyle0"></p>
-                            </div>
-                            <div id="g-ai0-2" class="g-ai2html-settings g-aiAbs"
-                                style="transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);transform-origin: 50% 53.2456462694575%;-webkit-transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);-webkit-transform-origin: 50% 53.2456462694575%;-ms-transform: matrix(0.9989,0.0464,-0.0464,0.9989,0,0);-ms-transform-origin: 50% 53.2456462694575%;top:23.5%;margin-top:-23.4px;left:78%;margin-left:-30%;width:62%;">
-                                <p class="g-pstyle1"> Bethel Neighborhood</p>
-                            </div>
-                        </div>
-
-
-                        <div id="g-map-medium" class="g-artboard" style="width:490px; height:409.5px;"
-                            data-aspect-ratio="1.197" data-min-width="490" data-max-width="632">
-                            <div style=""></div>
-                            <img id="g-map-medium-img" class="g-map-medium-img g-aiImg" alt="" src="map-medium.jpg" />
-                            <div id="g-ai1-1" class="g-ai2html-settings g-aiAbs"
-                                style="transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);transform-origin: 50% 53.7825192413527%;-webkit-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-webkit-transform-origin: 50% 53.7825192413527%;-ms-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-ms-transform-origin: 50% 53.7825192413527%;top:15%;margin-top:-13.2px;left:74.1697%;margin-left:-21.4286%;width:42.8571%;">
-                                <p class="g-pstyle0"><span class="g-cstyle0"> </span>Bethel Neighborhood</p>
-                            </div>
-                            <div id="g-ai1-2" class="g-ai2html-settings g-aiAbs"
-                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:12%;margin-top:-9.9px;left:22.0354%;margin-left:-13.4694%;width:26.9388%;">
-                                <p class="g-pstyle1">J H Baxter </p>
-                            </div>
-                        </div>
-
-                        <div id="g-map-mobile" class="g-artboard" style="max-width: 375px;max-height: 471px"
-                            data-aspect-ratio="0.797" data-min-width="0" data-max-width="489">
-                            <div style="padding: 0 0 125.5467% 0;"></div>
-                            <img id="g-map-mobile-img" class="g-map-mobile-img g-aiImg" alt="" src="map-mobile.jpg" />
-                            <div id="g-ai2-1" class="g-ai2html-settings g-aiAbs"
-                                style="transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);transform-origin: 50% 54.7885179259608%;-webkit-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-webkit-transform-origin: 50% 54.7885179259608%;-ms-transform: matrix(0.9905,-0.1373,0.1373,0.9905,0,0);-ms-transform-origin: 50% 54.7885179259608%;top:20%;margin-top:-10.4px;left:67.6316%;margin-left:-28%;width:56%;">
-                                <p class="g-pstyle0"> Bethel Neighborhood</p>
-                            </div>
-                            <div id="g-ai2-2" class="g-ai2html-settings g-aiAbs"
-                                style="transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);transform-origin: 50% 55.057368210158%;-webkit-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-webkit-transform-origin: 50% 55.057368210158%;-ms-transform: matrix(0.9853,-0.1706,0.1706,0.9853,0,0);-ms-transform-origin: 50% 55.057368210158%;top:30%;margin-top:-9.9px;left:24.271%;margin-left:-17.6%;width:35.2%;">
-                                <p class="g-pstyle1">J H Baxter </p>
-                            </div>
-                        </div>
+                    <div class="step" data-step="" data-iframe="iframe2">
+                        <p>North of JH Baxter is the Bethel neighborhood where Eric was raised. The poverty rate is over
+                            20% in
+                            Bethel
+                            and the
+                            median household income is $42,500, over $20,000 less than the median household income for
+                            Eugene
+                            city.</p>
                     </div>
-                </div>
-            </div>
-        </div>
+                    <div class="step" data-step="" data-iframe="iframe3">
+                        <p>Within three miles of the facility is Kalapuya High School, a public and alternative high
+                            school for
+                            students not
+                            succeeding at traditional schools.Students at Kalapuya have come to classes with hives,
+                            rashes and asthma,
+                            said Kelly
+                            Ferguson, the high school biology teacher there.</p>
+                </article>
+            </section>
+
+        </main>
         <div class="content">
             <p>A 2023 <a href="https://www.oregon.gov/deq/Programs/Documents/JHBMeetingsummary071223.pdf">report from
                     the Oregon
@@ -989,42 +761,52 @@
     </div>
 
     <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
     <script>
-        function initScrollytelling() {
-            // Get all step elements
-            const steps = document.querySelectorAll('.step');
-            // Get all graphic elements
-            const graphics = document.querySelectorAll('.scrolly-graphic');
+        var main = document.querySelector("main");
+        var scrolly = main.querySelector("#scrolly");
+        var sticky = scrolly.querySelector(".sticky-thing");
+        var article = scrolly.querySelector("article");
+        var steps = article.querySelectorAll(".step");
+        var iframes = sticky.querySelectorAll("iframe");
 
-            // Set up IntersectionObserver
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    // If the step is in view
-                    if (entry.isIntersecting) {
-                        // Get the data-index attribute to match with corresponding graphic
-                        const index = entry.target.dataset.index;
+        var scroller = scrollama();
 
-                        // Remove active class from all graphics
-                        graphics.forEach(g => g.classList.remove('active'));
+        function handleStepEnter(response) {
+            var el = response.element;
 
-                        // Add active class to the matching graphic
-                        const activeGraphic = document.querySelector(`.scrolly-graphic[data-index="${index}"]`);
-                        if (activeGraphic) {
-                            activeGraphic.classList.add('active');
-                        }
-                    }
-                });
-            }, {
-                // Configure the observer
-                threshold: 0.2, // Trigger when 70% of the step is visible
-                rootMargin: "-100px 0px -300px 0px"
+            // Remove is-active from all steps
+            steps.forEach(step => step.classList.remove('is-active'));
+            el.classList.add('is-active');
+
+            // Update the step number
+            sticky.querySelector("p").innerText = el.dataset.step;
+
+            // Handle iframe transitions
+            var targetIframe = el.dataset.iframe;
+
+            iframes.forEach(iframe => {
+                if (iframe.id === targetIframe) {
+                    iframe.classList.add('active');
+                } else {
+                    iframe.classList.remove('active');
+                }
             });
-
-            // Observe all steps
-            steps.forEach(step => observer.observe(step));
         }
 
-        // Initialize when the page loads
-        document.addEventListener('DOMContentLoaded', initScrollytelling);
+        function init() {
+            scroller
+                .setup({
+                    step: "#scrolly article .step",
+                    offset: 0.75,
+                    debug: false
+                })
+                .onStepEnter(handleStepEnter);
+
+            window.addEventListener("resize", scroller.resize);
+        }
+
+        init();
     </script>
 </body>
