@@ -1,0 +1,16 @@
+{
+    "fonts": [
+        {
+            "aifont": "NYTFranklin",
+            "family": "NYTFranklin",
+            "weight": "400",
+            "style": ""
+        },
+        {
+            "aifont": "NYTFranklin",
+            "family": "NYTFranklin",
+            "weight": "900",
+            "style": ""
+        }
+    ]
+}
