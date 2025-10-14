@@ -22,7 +22,7 @@
 
 #### b. I found all U.S public schools listed under the National Center for Education Statistics. The NCES also lists data on demographics.
 
-#### c. MERGE. Using geopandas and buffering method, I merged the two datasets and discovered 1792 public schools are within a mile away from a current Superfund sites. I also merged proposed Superfund sites with public schools. That's where I discovered JH Baxter and reached out to locals to understand more.
+#### c. MERGE. Using GeoPandas and buffering method, I merged the two datasets and discovered 1792 public schools are within a mile away from a current Superfund sites. I also merged proposed Superfund sites with public schools. That's where I discovered JH Baxter and reached out to locals to understand more.
 
 ## Data visualization goals
 
@@ -30,6 +30,3 @@
 
 #### i. To show the satellite images, I used scrollytelling here. I annotated the satellite images using Adobe Illustrator.
 
-## Challenges
-
-#### Current challenges I am working on is the presentation of the story. Given this is my first time trying to do scrollytelling, I am challenged with the layout. Nevertheless, it's a great challenge!
