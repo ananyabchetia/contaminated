@@ -22,7 +22,7 @@
 
 #### b. I found all U.S public schools listed under the National Center for Education Statistics. The NCES also lists data on demographics.
 
-#### c. MERGE. Using geopandas and buffering method, I merged the two datasets and discovered 1792 public schools are within a mile away from a current Superfund sites. I also merged proposed Superfund sites with public schools. That's where I discovered JH Baxter and reached out to locals to understand more.
+#### c. MERGE. Using GeoPandas and buffering method, I merged the two datasets and discovered 1792 public schools are within a mile away from a current Superfund sites. I also merged proposed Superfund sites with public schools. That's where I discovered JH Baxter and reached out to locals to understand more.
 
 ## Data visualization goals
 
