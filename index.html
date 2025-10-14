@@ -12,6 +12,194 @@
     <link rel="icon" type="image/png" href="contaminated_photo_logo/contaminated.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
+        .methodology-container {
+            max-width: 850px;
+            margin: 3em auto;
+            border: 1px solid #FFFCF5;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background-color: #fdfdfd;
+        }
+
+        .methodology-header {
+            padding: 1.2em 1.5em;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .methodology-header h2 {
+            margin: 0;
+            font-size: 1.5em;
+            color: var(--primary-color);
+        }
+
+        .methodology-toggle {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .methodology-toggle::before,
+        .methodology-toggle::after {
+            content: '';
+            position: absolute;
+            background-color: var(--accent-color);
+            border-radius: 1px;
+        }
+
+        .methodology-toggle::before {
+            width: 2px;
+            height: 16px;
+            top: 4px;
+            left: 11px;
+            transition: transform 0.3s ease;
+        }
+
+        .methodology-toggle::after {
+            width: 16px;
+            height: 2px;
+            top: 11px;
+            left: 4px;
+        }
+
+        .methodology-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .methodology-content-inner {
+            padding: 0 1.5em;
+        }
+
+        .methodology-container.active .methodology-content {
+            padding: 1.5em 0;
+            max-height: 2000px;
+        }
+
+        .methodology-container.active .methodology-toggle::before {
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 17px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .subhead {
+                font-size: 1.1em;
+                max-width: 95%;
+            }
+
+            .pullquote {
+                font-size: 1.4em;
+            }
+
+            .header {
+                min-height: 40vh;
+                padding: 3em 0;
+            }
+
+            .student-quote {
+                flex: 1 1 100%;
+            }
+
+            blockquote {
+                padding: 1em;
+            }
+
+            .methodology-container {
+                margin: 2em auto;
+            }
+
+            .methodology-header {
+                padding: 1em;
+            }
+
+            .methodology-header h2 {
+                font-size: 1.3em;
+            }
+
+            .methodology-content-inner {
+                padding: 0 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            .header {
+                min-height: 30vh;
+                padding: 2em 0;
+            }
+
+            .content {
+                padding: 0 1rem;
+            }
+
+            .highlight-box {
+                padding: 1em;
+            }
+
+            .full-width {
+                padding: 1em 0;
+            }
+
+            .pullquote {
+                font-size: 1.2em;
+            }
+
+            .methodology-container {
+                margin: 1.5em auto;
+            }
+
+            .methodology-header {
+                padding: 0.8em;
+            }
+
+            .methodology-header h2 {
+                font-size: 1.2em;
+            }
+
+            .methodology-toggle {
+                width: 20px;
+                height: 20px;
+            }
+
+            .methodology-toggle::before {
+                height: 14px;
+                top: 3px;
+                left: 9px;
+            }
+
+            .methodology-toggle::after {
+                width: 14px;
+                top: 9px;
+                left: 3px;
+            }
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -754,12 +942,40 @@
                 right
                 now, said Alice Corcoran, a public affairs specialist with the EPA.</p>
         </div>
+        <iframe src="search/search.html" style="width:100%; height:750px; border:none;"></iframe>
+        <div class="content">
+            <div class="methodology-container">
+                <div class="methodology-header">
+                    <h2>Click here to read my methodology</h2>
+                    <div class="methodology-toggle"></div>
+                </div>
+                <div class="methodology-content">
+                    <div class="methodology-content-inner">
+                        <p>This story started with dataset I built from scratch.</p>
+                        <p>I found a list of proposed and current Superfund sites in the National Priorities List by the
+                            Environmental Protection
+                            Agency. NPL (National Priorities List) Superfund sites are the most hazardous contaminated
+                            locations in the U.S.. The
+                            EPA identifies these sites for long-term cleanup due to the presence of toxic waste that
+                            poses a risk to human health or
+                            the environment. These sites are prioritized for federal funding and remediation under the
+                            Superfund program.</p>
+                        <p>I then I found all U.S public schools listed under the National Center for Education
+                            Statistics. The NCES also lists data on
+                            demographics.</p>
+                        <p>Using GeoPandas and buffering method, I merged the two datasets and discovered 1792 public
+                            schools are within a mile
+                            away from a current Superfund sites. I also merged proposed Superfund sites with public
+                            schools. That's where I
+                            discovered JH Baxter and reached out to locals to understand more.</p>
+                        <p>There's more to how this story came to life.</p>
+                        <p>We can chat about it, you can email at ananyabchetia@gmail.com or check out my <a
+                                href="https://github.com/ananyabchetia/contaminated/">GitHub.</p>
 
-
-        <iframe src="search/search.html" style="width:100%; height:800px; border:none;"></iframe>
-
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="footer">
         <div class="content">
@@ -818,5 +1034,17 @@
         }
 
         init();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const methodologyHeader = document.querySelector('.methodology-header');
+            const methodologyContainer = document.querySelector('.methodology-container');
+
+            if (methodologyHeader && methodologyContainer) {
+                methodologyHeader.addEventListener('click', function () {
+                    methodologyContainer.classList.toggle('active');
+                });
+            }
+        });
     </script>
 </body>
