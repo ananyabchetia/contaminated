@@ -30,6 +30,3 @@
 
 #### i. To show the satellite images, I used scrollytelling here. I annotated the satellite images using Adobe Illustrator.
 
-## Challenges
-
-#### Current challenges I am working on is the presentation of the story. Given this is my first time trying to do scrollytelling, I am challenged with the layout. Nevertheless, it's a great challenge!
