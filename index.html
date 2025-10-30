@@ -412,10 +412,12 @@
             position: relative;
             z-index: 5;
             margin-top: 100vh;
-            background-color: #ffffff;
+            background-color: rgb(255, 255, 255);
             background-repeat: repeat;
             background-attachment: scroll;
             padding: 2em 0;
+            padding-bottom: 4em;
+            min-height: 100vh;
         }
 
         .main-content p {
@@ -506,14 +508,17 @@
         }
 
         @media (max-width: 640px) {
-            body {
-                font-size: 18px;
+            .main-content {
+                background-color: #ffffff;
+                opacity: 1;
+                isolation: isolate;
             }
+        }
 
-            .content {
-                padding-left: 0.5em;
-                padding-right: 0.5em;
-            }
+        .content {
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
         }
 
         .content .datawrapper-container {
@@ -758,7 +763,7 @@
     </div>
 
     <div class="header"></div>
-    <p class="video-credit">Video is a screen recording of JH Baxter site via Google Images</p>
+    <p class="video-credit"></p>
 
 
     <div class="main-content">
