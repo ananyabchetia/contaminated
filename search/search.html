@@ -12,6 +12,7 @@
         height: 400px;
         width: 700px;
         margin: 20px auto;
+        max-width: 100%;
     }
 
     .controls {
@@ -20,8 +21,10 @@
         font-size: 14px;
         padding: 0 16px;
         width: 250px;
+        max-width: 90%;
         display: block;
         margin: 0 auto 10px auto;
+        box-sizing: border-box;
     }
 
     body {
@@ -32,6 +35,21 @@
         align-items: center;
         justify-content: center;
         text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .content {
+        max-width: 700px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 700px;
+        padding: 0 10px;
+        box-sizing: border-box;
     }
 
     p {
@@ -46,6 +64,57 @@
     .loading {
         color: #000000;
         font-style: italic;
+    }
+
+    #distanceResult {
+        padding: 0 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+        body {
+            font-size: 1rem;
+        }
+
+        #map {
+            height: 350px;
+            width: 100%;
+            margin: 15px 0;
+        }
+
+        .subhead_2 {
+            font-size: 1.2rem;
+        }
+
+        .content {
+            padding: 0 15px;
+        }
+
+        .controls {
+            width: 100%;
+            font-size: 16px;
+            height: 45px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        body {
+            font-size: 0.9rem;
+        }
+
+        #map {
+            height: 300px;
+        }
+
+        .subhead_2 {
+            font-size: 1.1rem;
+        }
+
+        .controls {
+            height: 40px;
+            font-size: 14px;
+        }
     }
 </style>
 
@@ -201,3 +270,6 @@
             });
         }
     </script>
+</body>
+
+</html>
