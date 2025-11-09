@@ -12,23 +12,106 @@
     <link rel="icon" type="image/png" href="contaminated_photo_logo/contaminated.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        .methodology-container {
-            max-width: 850px;
-            margin: 3em auto;
-            border: 1px solid #FFFCF5;
-            border-radius: 4px;
+        /* Scrollytelling Styles */
+
+        .hero {
+            position: relative;
+            height: 100vh;
             overflow: hidden;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-            background-color: #fdfdfd;
+        }
+
+        main {
+            padding: 0;
+            background-color: #fff;
+        }
+
+        #scrolly {
+            position: relative;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        .sticky-thing {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
             width: 100%;
-            box-sizing: border-box;
+            height: 100vh;
+            display: flex;
+            align-items: center left;
+            justify-content: center;
+            background-color: #fff;
+            /* ADD THIS - this is the key! */
+        }
+
+        .sticky-thing p {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: white;
+            z-index: 10;
+        }
+
+        .sticky-thing iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            pointer-events: none;
+            border: none;
+            /* ADD THIS */
+            outline: none;
+            /* ADD THIS TOO */
+        }
+
+        .sticky-thing iframe.active {
+            opacity: 1.5;
+            pointer-events: auto;
+        }
+
+        article {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+            transform: translateX(-50%);
+            background-color: ;
+        }
+
+        .step {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2em;
+        }
+
+        .step p {
+            background: rgb(255, 255, 255);
+            padding: 2em;
+            border-radius: 0px;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-left: 0;
         }
 
 
+        .methodology-container {
+            max-width: 850px;
+            margin: 3em auto;
+            border: 1px solid #ffffff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            background-color: #ffffff;
+        }
+
         .methodology-header {
             padding: 1.2em 1.5em;
-            background-color: #f9f9f9;
-            border-bottom: 1px solid #f9f9f9;
+            background-color: #ffffff;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
@@ -124,7 +207,6 @@
 
             .methodology-container {
                 margin: 2em auto;
-                padding: 1em;
             }
 
             .methodology-header {
@@ -142,7 +224,7 @@
 
         @media (max-width: 480px) {
             body {
-                font-size: 14px;
+                font-size: 16px;
             }
 
             h1 {
@@ -175,8 +257,7 @@
             }
 
             .methodology-container {
-                margin: 1.5em 0.5em;
-                width: calc(100% - 1em);
+                margin: 1.5em auto;
             }
 
             .methodology-header {
@@ -184,15 +265,12 @@
             }
 
             .methodology-header h2 {
-                font-size: 1em;
-                line-height: 1.4;
-                word-wrap: break-word;
+                font-size: 1.2em;
             }
 
             .methodology-toggle {
                 width: 20px;
                 height: 20px;
-                flex-shrink: 0;
             }
 
             .methodology-toggle::before {
@@ -211,210 +289,9 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Times New Roman', Times, serif, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #fff;
         }
-
-        nav {
-            background: #601b1b;
-            padding: 1rem;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-right: 1rem;
-        }
-
-        main {
-            margin-top: 60px;
-        }
-
-        #scrolly {
-            position: relative;
-            background-color: #ffffff;
-            padding: 1rem;
-        }
-
-        article {
-            position: relative;
-            padding: 0;
-            max-width: 20rem;
-        }
-
-        .sticky-thing {
-            position: -webkit-sticky;
-            position: sticky;
-            left: 0;
-            width: 100%;
-            margin: 0;
-            z-index: 0;
-            top: 12.5vh;
-            height: 90vh;
-            display: flex;
-            align-items: left;
-            justify-content: left;
-        }
-
-        .sticky-thing iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .sticky-thing iframe.active {
-            opacity: 1;
-        }
-
-        .sticky-thing p {
-            font-size: 8rem;
-            font-weight: 900;
-            color: #fff;
-            position: absolute;
-            z-index: 10;
-        }
-
-        .step {
-            color: #fff;
-            min-height: 400px;
-            margin: 0 auto 2rem auto;
-        }
-
-        .step:last-child {
-            margin-bottom: 0;
-        }
-
-        .step.is-active p {
-            background-color: rgb(255, 255, 255);
-            color: #000000;
-        }
-
-        .step p {
-            text-align: left;
-            padding: 1rem;
-            font-size: 1.5rem;
-            background-color: #ffffff;
-        }
-
-        #outro {
-            height: 100vh;
-        }
-
-        .scrolly-container {
-            display: flex;
-            max-width: 100%;
-            margin: 0 auto;
-            padding: 0;
-            position: relative;
-        }
-
-        @media (min-width: 768px) {
-            .scrolly-container {
-                margin-left: 144px;
-                padding: 2em;
-                gap: 2em;
-            }
-        }
-
-        .scrolly-text {
-            flex: 1;
-            max-width: 600px;
-            text-align: left;
-            z-index: 10;
-            position: relative;
-        }
-
-        .main-content .scrolly-container {
-            max-width: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .scrolly-container {
-                flex-direction: column;
-                margin-left: 0;
-                padding: 1em;
-            }
-
-            .scrolly-text {
-                max-width: 100%;
-            }
-        }
-
-        .scrolly-graphic {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-            pointer-events: none;
-        }
-
-        .scrolly-graphic.active {
-            opacity: 1;
-            pointer-events: auto;
-            z-index: 1;
-        }
-
-        .scrolly-image {
-            flex: 1;
-            position: relative;
-            height: 400px;
-            width: 100%;
-            align-self: flex-start;
-            margin-top: 2em;
-        }
-
-        @media (max-width: 768px) {
-            .scrolly-image {
-                height: 300px;
-            }
-        }
-
-        .step {
-            margin-bottom: 70vh;
-            font-size: 1.5rem;
-            padding: 0.15em;
-            border-radius: 4px;
-        }
-
-        .step:last-child {
-            margin-bottom: 40vh;
-        }
-
-        .scrolly-image {
-            position: sticky;
-            top: 20%;
-            height: 600px;
-            align-self: flex-start;
-        }
-
-
-        .g-artboard {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .g-artboard img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        body {
-            margin: 0;
-            font-size: 20px;
-            text-rendering: optimizeLegibility;
-        }
-
 
 
         .main-content p {
@@ -423,7 +300,7 @@
         }
 
         .content p {
-            font-family: "Times New Roman", Times, serif !important;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         .subhead_2 {
@@ -448,17 +325,19 @@
             overflow: hidden;
         }
 
+
         a {
             color: #5b0101;
         }
 
         .footer {
-            background: hsl(0, 0%, 100%);
+            background: #ffffff;
             text-align: center;
             font-size: 0.8em;
             padding: 4em 0;
             position: relative;
             z-index: 5;
+            margin-top: -5px;
         }
 
         figure {
@@ -504,27 +383,20 @@
             background: #fff880;
         }
 
-        @media (max-width: 640px) {
-            .main-content {
-                background-color: #ffffff;
-                opacity: 1;
-                isolation: isolate;
-            }
-        }
+        @media (max-width: 640px) {}
 
         .content {
             padding-left: 0.5em;
             padding-right: 0.5em;
         }
-        }
+
 
         .content .datawrapper-container {
             max-width: 120%;
             width: 120%;
             margin-left: -10%;
         }
-    </style>
-    <style>
+
         .g-ai2html-settings {
             position: absolute;
             top: 80%;
@@ -603,7 +475,7 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            z-index: 1;
+            z-index: 0;
         }
 
         .video-container video {
@@ -616,9 +488,7 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100%;
         }
-
 
         .title-container {
             position: fixed;
@@ -664,14 +534,15 @@
 
         .main-content {
             position: relative;
-            z-index: 5;
-            margin-top: 100vh;
-            background-color: rgb(255, 255, 255);
-            background-repeat: repeat;
-            background-attachment: scroll;
-            padding: 2em 0;
-            padding-bottom: 4em;
+            z-index: 3;
+            background-color: #fff;
+            isolation: isolate;
+            min-height: 100vh;
+            margin-top: -1px;
+            /* ADD THIS: eliminates gap */
+            padding-bottom: 0;
         }
+
 
         @media (max-width: 640px) {
             .title-container {
@@ -751,23 +622,17 @@
 
 <body>
     <div class="video-container">
-        <video src="1_cleaner_video.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+        <video src="photos/1_cleaner_video.mov" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
     </div>
 
     <div class="title-container">
         <div class="category-label">CLIMATE AND ENVIRONMENT</div>
         <h1 class="fixed-title">A guilty plea was just the beginning: Inside a town's fight for a cleaner future</h1>
     </div>
-
     <div class="header"></div>
-    <p class="video-credit"></p>
-
-
     <div class="main-content">
+        <p class="video-credit"></p>
         <div class="content">
-            <div class="byline">
-                <p></p>
-            </div>
             <p>By <a href="https://ananyabchetia.github.io/">Ananya Chetia</a></p>
             <p>Oregon native Arjorie Arberry-Baribeault always had a razor sharp eye for styling hair. But when her
                 daughter Zion was
@@ -871,7 +736,6 @@
                             Ferguson, the high school biology teacher there.</p>
                 </article>
             </section>
-
         </main>
         <div class="content">
             <p>Using student self-reported data and research from state nonprofit Beyond Toxics Waste,
@@ -944,8 +808,9 @@
                 right
                 now, said Alice Corcoran, a public affairs specialist with the EPA.</p>
         </div>
-        <iframe src="search/search.html" style="width:100%; height:750px; border:none; margin-bottom:-200px;"></iframe>
-        <div class="content" style="margin-bottom:-200px;">
+        <iframe src="search/search.html"
+            style="width:100%; height:750px; border:none; margin-bottom:-100px; background-color:#fff;"></iframe>
+        <div class="content">
             <div class="methodology-container">
                 <div class="methodology-header">
                     <h2>Click here to read my methodology</h2>
@@ -955,27 +820,25 @@
                     <div class="methodology-content-inner">
                         <p>This story started with dataset I built from scratch.</p>
                         <p>I found a list of proposed and current Superfund sites in the National Priorities List by the
-                            Environmental Protection
-                            Agency. The
-                            EPA identifies these sites for long-term cleanup due to the presence of toxic waste that
-                            poses a risk to human health or
-                            the environment.</p>
+                            Environmental Protection Agency. The EPA identifies these sites for long-term cleanup due to
+                            the
+                            presence of toxic waste that
+                            poses a risk to human health or the environment.</p>
                         <p>I then found all U.S public schools listed under the National Center for Education
-                            Statistics. The NCES also lists data on
-                            demographics.</p>
+                            Statistics. The NCES also lists data on demographics.</p>
                         <p>Using GeoPandas and buffering method, I joined the two datasets and discovered 1792 public
-                            schools are within a mile
-                            away from a current Superfund sites. I also joined proposed Superfund sites with public
+                            schools are within a mile away from a current Superfund sites. I also joined proposed
+                            Superfund
+                            sites with public
                             schools.</p>
-                        <p>That's where I
-                            discovered JH Baxter and reached out to locals to understand more.</p>
+                        <p>That's where I discovered JH Baxter and reached out to locals to understand more.</p>
                         <p>One of the main questions I always wonder as a reporter is, how has this impacted residents
                             and how are they responding?</p>
                         <p>This piece answers both.</p>
                         <p>There's more to how this story came to life. We can chat about it, you can email at
                             ananyabchetia@gmail.com or check out my <a
-                                href="https://github.com/ananyabchetia/contaminated/">GitHub.</a></p>
-
+                                href="https://github.com/ananyabchetia/contaminated/">GitHub.</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -988,8 +851,6 @@
                     href="https://github.com/ananyabchetia/contaminated/">here</a> </p>
         </div>
     </div>
-    </div>
-
     <script src="https://unpkg.com/scrollama"></script>
     <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
@@ -1029,7 +890,7 @@
             scroller
                 .setup({
                     step: "#scrolly article .step",
-                    offset: 0.75,
+                    offset: 0.70,
                     debug: false
                 })
                 .onStepEnter(handleStepEnter);
@@ -1051,4 +912,5 @@
             }
         });
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
