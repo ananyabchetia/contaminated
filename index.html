@@ -416,7 +416,7 @@
         }
 
         #g-ai1-1 {
-            top: 15%;/ /
+            top: 15%;
         }
 
         #g-ai1-2 {
@@ -613,7 +613,52 @@
                 width: 160%;
             }
         }
-        
+
+        /* ~~~ */
+
+        .step p {
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        @media screen and (max-width: 1080px) {
+            .step {
+                margin-left: 150px;
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .step {
+                margin-left: 300px;
+                width: 50%;
+            }
+        }
+
+        @media screen and (max-width: 580px) {
+            .step {
+                margin-left: 250px;
+                width: 50%;
+            }
+        }
+
+        /* phone */
+
+        @media screen and (max-width: 480px) {
+            .video-container {
+                position: absolute;
+            }
+
+            .title-container {
+                position: absolute;
+            }
+
+            .step {
+                margin-left: 53%;
+                width: 300px;
+            }
+        }
+
     </style>
 </head>
 
@@ -702,7 +747,7 @@
         </div>
         <main>
             <section id="scrolly">
-                <div class="sticky-thing">
+                <div class="sticky-thing" style="background-color: black;">
                     <p></p>
                     <iframe id="iframe1" src="scrollytelling_images/design_1.html" class="active"></iframe>
                     <iframe id="iframe2" src="scrollytelling_images/design_bethel.html"></iframe>
