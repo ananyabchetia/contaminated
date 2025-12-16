@@ -44,7 +44,12 @@
         width: 100% !important;
         height: 100% !important;
         object-fit: cover;
-        /* or 'contain' to see full image */
+    }
+
+    /* Desktop versions - show full image without cropping */
+    #g-design_bethel-full .g-aiImg,
+    #g-design_bethel-medium .g-aiImg {
+        object-fit: contain;
     }
 
     #g-design_bethel-box .g-aiSymbol {
