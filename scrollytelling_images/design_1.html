@@ -20,30 +20,13 @@
         left: 0;
     }
 
-    #g-design_1-box,
     #g-design_1-box .g-artboard {
         margin: 0;
-    }
-
-    /* Make artboards fill the container */
-    #g-design_1-box .g-artboard {
         width: 100% !important;
         height: 100% !important;
         position: absolute;
         top: 0;
         left: 0;
-    }
-
-    /* Scale images to cover full area */
-    #g-design_1-box .g-aiImg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100% !important;
-        height: 100% !important;
-        object-fit: cover;
-        /* or 'contain' to see full image */
-        display: block;
     }
 
     #g-design_1-box p {
@@ -57,8 +40,17 @@
     #g-design_1-box .g-aiImg {
         position: absolute;
         top: 0;
+        left: 0;
         display: block;
         width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+    }
+
+    /* Desktop versions - show full image without cropping */
+    #g-design_1-full .g-aiImg,
+    #g-design_1-medium .g-aiImg {
+        object-fit: contain;
     }
 
     #g-design_1-box .g-aiSymbol {
