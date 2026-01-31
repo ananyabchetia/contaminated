@@ -10,11 +10,9 @@
 
 ## File structure
 
-### scrollytelling_ima
+### scrollytelling_images
 
-#### Contains assets used for the scrollytelling portion of the story built with Scrollama.
-
-#### Graphics were created using Google Earth imagery, Adobe Illustrator, and ai2html.
+#### Contains assets used for the scrollytelling portion of the story built with Scrollama. Graphics were created using Google Earth imagery, Adobe Illustrator, and ai2html.
 
 ### all_datasets
 
@@ -36,9 +34,7 @@
 
 #### public_school_dataset
 
-#### Excel file containing public school locations across the United States.
-
-##### This dataset supports the finding that nearly 1,800 public schools are located within one mile of a Superfund site.
+#### Excel file containes public school locations across the United States and a derived CSV showing that nearly 1,800 public schools are located within one mile of a Superfund site.
 
 ## Workflow
 
