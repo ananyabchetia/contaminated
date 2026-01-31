@@ -131,7 +131,7 @@
     </div>
 
     <script type="module">
-        const apiKey = 'AIzaSyCjs9wMvnhzROe_f__25Ec6StweVmoirTE';
+        const apiKey = 'AIzaSyA0n5Mfg1BYJT4MbQDfcjBXCIlHLgW4sx8';
 
         let map;
         let dataLoaded = false;
@@ -144,7 +144,7 @@
             });
 
             // Load Superfund GeoJSON
-            map.data.loadGeoJson('../superfund_sites_dataset/geojson/Superfund_National_Priorities_List_(NPL)_Sites_with_Status_Information.geojson', {}, () => {
+            map.data.loadGeoJson('../all_datasets/geojson/Superfund_National_Priorities_List_(NPL)_Sites_with_Status_Information.geojson', {}, () => {
                 dataLoaded = true;
                 document.getElementById('distanceResult').innerText = "Superfund data loaded. Enter your school address, workplace or a location to find the distance.";
                 document.getElementById('distanceResult').className = "";
