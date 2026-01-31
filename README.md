@@ -32,15 +32,11 @@
 
 ### 1. first_notebook.ipynb:
 
-#### Extracts active and proposed Superfund site data from a PDF and converts it into a clean CSV.
-
-### 2. second_notebook.ipynb
-
 #### Uses geospatial analysis to identify public schools located within one mile of Superfund sites.
 
 #### Specifically uses GeoPandas for spatial operations, reprojects geometries to EPSG:5070 and applies a one-mile buffer to calculate proximity.
 
-### 3. third_notebook.ipynb:
+### 2. second_notebook.ipynb:
 
 #### Cleans FOIA-requested complaint data and formats it for a Datawrapper visualization.
 
