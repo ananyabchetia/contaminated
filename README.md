@@ -28,6 +28,12 @@
 
 #### d. public_school_dataset - Excel file containes public school locations across the United States and a derived CSV showing that nearly 1,800 public schools are located within one mile of a Superfund site.
 
+### 3. Google_Maps_API
+
+#### This folder contains an interactive Google Maps API–powered tool that lets users evaluate environmental risk by measuring the proximity of schools and homes to Superfund sites.
+
+#### Please note, I added this interactive tool last summer, after my story published in March.
+
 ## Workflow
 
 ### 1. first_notebook.ipynb:
