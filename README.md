@@ -6,7 +6,7 @@
 
 **[Contaminated](https://ananyabchetia.github.io/contaminated/)**
 
-### The project also investigates the national scope of contamination by analyzing how many public schools are located within one mile of a Superfund site.
+### The project also investigates the national scope of contamination by analyzing how many public schools are located within one mile of a Superfund site. This repository contains the data, analysis and code used to investigate this.
 
 ## File structure
 
@@ -14,13 +14,15 @@
 
 #### Contains assets used for the scrollytelling portion of the story built with Scrollama. Graphics were created using Google Earth imagery, Adobe Illustrator, and ai2html.
 
+[![Scrollytelling visualization example](scrollytelling_images/readme_images/scrollytelling.png)](https://ananyabchetia.github.io/contaminated/)
+
 ### all_datasets
 
 ### Stores all datasets used in the reporting and analysis for this project:
 
 #### 1. FOIA
 
-#### Public records of odor complaints related to the wood treatment facility in Eugene, Oregon.
+#### Public records of odor complaints from the wood treatment facility in Eugene, Oregon.
 
 #### PDFs_of_superfunds
 
@@ -40,7 +42,7 @@
 
 ### first_notebook.ipynb
 
-#### Extracts Superfund site data from a PDF and converts it into a clean CSV.
+#### Extracts active and proposed Superfund site data from a PDF and converts it into a clean CSV.
 
 ### second_notebook.ipynb
 
