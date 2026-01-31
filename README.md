@@ -18,7 +18,7 @@
 
 ### 2. all_datasets
 
-### Stores all datasets used in the reporting and analysis for this project:
+### Stores all dataset folders used in the reporting and analysis for this project:
 
 #### a. FOIA - Public records of odor complaints from the wood treatment facility in Eugene, Oregon.
 
