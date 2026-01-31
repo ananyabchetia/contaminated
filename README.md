@@ -1,32 +1,55 @@
 ## What is this story about?
 
-#### A wood facility site named JH Baxter polluted the groundwater, air and released hazardous waste for decades. This is the story of how residents have been and continue to be impacted by it and the actions residents took to finally see JH Baxter plead guilty this year.
+### This project examines a small community’s fight against a wood treatment facility that polluted groundwater and air, and released hazardous waste for decades in Eugene, Oregon.
 
-## What did I have to do to make this story a reality
+### The reported story is published here:
 
-#### 1. FOIA Requests
+**[Contaminated](https://ananyabchetia.github.io/contaminated/)**
 
-#### a. I FOIA requested for all received by the Lane Regional Air Protection Agency (LRAPA) regarding J.H. Baxter in Eugene, OR between 2002 to 2022. This helped with my reporting because it offers a glimpse of how residents were reacting to the strong odors and waste produced by JH Baxter.
+### The project also investigates the national scope of contamination by analyzing how many public schools are located within one mile of a Superfund site.
 
-#### 2. Court records
+## File structure
 
-#### a. I used Pacer to read and analyze UNITED STATES OF AMERICA vs. J.H. BAXTER & CO., A CALIFORNIA LIMITED PARTNERSHIP, et al. These court records showed specifically what JH Baxter was guilty for. It revealed the corporation and the president pleaded guilty for actions between January 2019 to October 2019. In reality, there is evidence showing JH Baxter had over 20 violations with three different enviromental agencies spanning decades.
+### scrollytelling_ima
 
-#### 3. Interviews
+#### Contains assets used for the scrollytelling portion of the story built with Scrollama.
 
-#### a. I spoke with school teacher Kelly Ferguson and local residents Lisa and Eric Dion. I plan to speak to climate activist Arjorie Arberry-Baribeault and a high school student this week.
+#### Graphics were created using Google Earth imagery, Adobe Illustrator, and ai2html.
 
-#### 4. The data work led me to finding this hyper-local story:
+### all_datasets
 
-#### a. I found a list of proposed and current Superfund sites in the National Priorities List by the Environmental Protection Agency. NPL (National Priorities List) Superfund sites are the most hazardous contaminated locations in the U.S.. The EPA identifies these sites for long-term cleanup due to the presence of toxic waste that poses a risk to human health or the environment. These sites are prioritized for federal funding and remediation under the Superfund program.
+### Stores all datasets used in the reporting and analysis for this project:
 
-#### b. I found all U.S public schools listed under the National Center for Education Statistics. The NCES also lists data on demographics.
+#### 1. FOIA
 
-#### c. MERGE. Using GeoPandas and buffering method, I merged the two datasets and discovered 1792 public schools are within a mile away from a current Superfund sites. I also merged proposed Superfund sites with public schools. That's where I discovered JH Baxter and reached out to locals to understand more.
+#### Public records of odor complaints related to the wood treatment facility in Eugene, Oregon.
 
-## Data visualization goals
+#### PDFs_of_superfunds
 
-#### a. Use satellite imagery to identify JH Baxter and Bethel neighborhood.
+#### EPA PDFs listing proposed and active Superfund sites.
 
-#### i. To show the satellite images, I used scrollytelling here. I annotated the satellite images using Adobe Illustrator.
+#### Superfund_list_csv
 
+#### CSV files generated from the EPA Superfund PDFs.
+
+#### These cleaned files can be used directly instead of scraping the PDFs.
+
+#### public_school_dataset
+
+#### Excel file containing public school locations across the United States.
+
+##### This dataset supports the finding that nearly 1,800 public schools are located within one mile of a Superfund site.
+
+## Workflow
+
+### first_notebook.ipynb
+
+#### Extracts Superfund site data from a PDF and converts it into a clean CSV.
+
+### second_notebook.ipynb
+
+#### Identifies public schools located within one mile of Superfund sites using geospatial analysis.
+
+### third_notebook.ipynb
+
+#### Cleans FOIA-requested complaint data and formats it for a Datawrapper visualization.
