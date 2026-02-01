@@ -30,9 +30,11 @@
 
 ### 3. Google_Maps_API
 
-#### This folder contains an interactive Google Maps API–powered tool that lets users evaluate environmental risk by measuring the proximity of schools and homes to Superfund sites.
+#### This folder contains an interactive Google Maps API–powered tool that lets users evaluate environmental risk by measuring the proximity of schools and homes to Superfund sites. Scroll down and find this tool at the end of this **[story](https://ananyabchetia.github.io/contaminated/)**.
 
-#### Please note, I added this interactive tool last summer, after my story published in March.
+#### Note: This interactive component was added after the story was published in March.
+
+#### Important: The tool cannot be run locally, as it relies on a Google Maps API key that is restricted to my website for security reasons.
 
 ## Workflow
 
