@@ -1,246 +1,274 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Google Maps Superfund Distance</title>
     <style>
-        #map {
-            height: 400px;
-            width: 700px;
-            margin: 20px auto;
-            max-width: 100%;
-        }
+      #map {
+        height: 400px;
+        width: 700px;
+        margin: 20px auto;
+        max-width: 100%;
+      }
 
-        .controls {
-            margin: 10px 0;
-            height: 50px;
-            font-size: 14px;
-            padding: 0 16px;
-            width: 250px;
-            max-width: 90%;
-            display: block;
-            margin: 0 auto 10px auto;
-            box-sizing: border-box;
-        }
+      .controls {
+        margin: 10px 0;
+        height: 50px;
+        font-size: 14px;
+        padding: 0 16px;
+        width: 250px;
+        max-width: 90%;
+        display: block;
+        margin: 0 auto 10px auto;
+        box-sizing: border-box;
+      }
 
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+      }
+
+      .content {
+        max-width: 700px;
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 700px;
+        padding: 0 10px;
+        box-sizing: border-box;
+      }
+
+      p {
+        margin: 10px 0;
+      }
+
+      .subhead_2 {
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+
+      .loading {
+        color: #000000;
+        font-style: italic;
+      }
+
+      #distanceResult {
+        padding: 0 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      @media (max-width: 768px) {
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 1.2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin: 0;
-            padding: 0;
+          font-size: 1rem;
         }
 
-        .content {
-            max-width: 700px;
-            padding: 0 20px;
-            box-sizing: border-box;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 700px;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-
-        p {
-            margin: 10px 0;
+        #map {
+          height: 350px;
+          width: 100%;
+          margin: 15px 0;
         }
 
         .subhead_2 {
-            font-weight: bold;
-            font-size: 1.5rem;
+          font-size: 1.2rem;
         }
 
-        .loading {
-            color: #000000;
-            font-style: italic;
+        .content {
+          padding: 0 15px;
         }
 
-        #distanceResult {
-            padding: 0 10px;
-            max-width: 100%;
-            box-sizing: border-box;
+        .controls {
+          width: 100%;
+          font-size: 16px;
+          height: 45px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        body {
+          font-size: 0.9rem;
         }
 
-        @media (max-width: 768px) {
-            body {
-                font-size: 1rem;
-            }
-
-            #map {
-                height: 350px;
-                width: 100%;
-                margin: 15px 0;
-            }
-
-            .subhead_2 {
-                font-size: 1.2rem;
-            }
-
-            .content {
-                padding: 0 15px;
-            }
-
-            .controls {
-                width: 100%;
-                font-size: 16px;
-                height: 45px;
-            }
+        #map {
+          height: 300px;
         }
 
-        @media (max-width: 480px) {
-            body {
-                font-size: 0.9rem;
-            }
-
-            #map {
-                height: 300px;
-            }
-
-            .subhead_2 {
-                font-size: 1.1rem;
-            }
-
-            .controls {
-                height: 40px;
-                font-size: 14px;
-            }
+        .subhead_2 {
+          font-size: 1.1rem;
         }
+
+        .controls {
+          height: 40px;
+          font-size: 14px;
+        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="content">
-        <p class="subhead_2">How far is your school or home from a current Superfund Site?</p>
-        <p>Nationally, almost 1800 public schools are within a mile away from a contaminated site on the Superfund's NPL
-            list.</p>
+      <p class="subhead_2">
+        How far is your school or home from a current Superfund Site?
+      </p>
+      <p>
+        Nationally, over 2,000 public schools are within a mile away from a
+        contaminated site on the Superfund's NPL list.
+      </p>
     </div>
 
     <div class="container">
-        <input id="searchInput" class="controls" type="text" placeholder="Enter location">
-        <div id="map"></div>
-        <div id="distanceResult" class="loading">Loading Superfund data...</div>
+      <input
+        id="searchInput"
+        class="controls"
+        type="text"
+        placeholder="Enter location"
+      />
+      <div id="map"></div>
+      <div id="distanceResult" class="loading">Loading Superfund data...</div>
     </div>
 
     <script type="module">
-        const apiKey = 'AIzaSyC4EScDlBPEFgxxOZDQzQ0m - XvQ1Vs0P - A';
+      const apiKey = "AIzaSyC4EScDlBPEFgxxOZDQzQ0m - XvQ1Vs0P - A";
 
-        let map;
-        let dataLoaded = false;
-        let currentUserLocation = null;
+      let map;
+      let dataLoaded = false;
+      let currentUserLocation = null;
 
-        function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 39.5, lng: -98.35 },
-                zoom: 4
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: 39.5, lng: -98.35 },
+          zoom: 4,
+        });
+
+        // Load Superfund GeoJSON
+        map.data.loadGeoJson(
+          "../all_datasets/geojson/Superfund_National_Priorities_List_(NPL)_Sites_with_Status_Information.geojson",
+          {},
+          () => {
+            dataLoaded = true;
+            document.getElementById("distanceResult").innerText =
+              "Superfund data loaded. Enter your school address, workplace or a location to find the distance.";
+            document.getElementById("distanceResult").className = "";
+
+            // Add click listener for sites
+            const infoWindow = new google.maps.InfoWindow();
+            map.data.addListener("click", function (event) {
+              const siteName =
+                event.feature.getProperty("Site_Name") || "Unknown Site";
+              const siteCity = event.feature.getProperty("City") || "";
+              const siteState = event.feature.getProperty("State") || "";
+              let content = `<div>Superfund site name: <strong>${siteName}</strong>`;
+              if (siteCity || siteState)
+                content += `<br>${siteCity}${siteCity && siteState ? ", " : ""}${siteState}`;
+              content += `</div>`;
+              infoWindow.setContent(content);
+              infoWindow.setPosition(event.latLng);
+              infoWindow.open(map);
             });
+          },
+        );
 
-            // Load Superfund GeoJSON
-            map.data.loadGeoJson('../all_datasets/geojson/Superfund_National_Priorities_List_(NPL)_Sites_with_Status_Information.geojson', {}, () => {
-                dataLoaded = true;
-                document.getElementById('distanceResult').innerText = "Superfund data loaded. Enter your school address, workplace or a location to find the distance.";
-                document.getElementById('distanceResult').className = "";
+        // Autocomplete
+        const input = document.getElementById("searchInput");
+        const autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.bindTo("bounds", map);
 
-                // Add click listener for sites
-                const infoWindow = new google.maps.InfoWindow();
-                map.data.addListener('click', function (event) {
-                    const siteName = event.feature.getProperty('Site_Name') || 'Unknown Site';
-                    const siteCity = event.feature.getProperty('City') || '';
-                    const siteState = event.feature.getProperty('State') || '';
-                    let content = `<div>Superfund site name: <strong>${siteName}</strong>`;
-                    if (siteCity || siteState) content += `<br>${siteCity}${siteCity && siteState ? ', ' : ''}${siteState}`;
-                    content += `</div>`;
-                    infoWindow.setContent(content);
-                    infoWindow.setPosition(event.latLng);
-                    infoWindow.open(map);
-                });
-            });
+        const infowindow = new google.maps.InfoWindow();
+        const marker = new google.maps.Marker({
+          map: map,
+          anchorPoint: new google.maps.Point(0, -29),
+        });
 
-            // Autocomplete
-            const input = document.getElementById('searchInput');
-            const autocomplete = new google.maps.places.Autocomplete(input);
-            autocomplete.bindTo('bounds', map);
+        autocomplete.addListener("place_changed", function () {
+          infowindow.close();
+          marker.setVisible(false);
+          const place = autocomplete.getPlace();
 
-            const infowindow = new google.maps.InfoWindow();
-            const marker = new google.maps.Marker({
-                map: map,
-                anchorPoint: new google.maps.Point(0, -29)
-            });
+          if (!place.geometry) {
+            window.alert("Autocomplete's returned place contains no geometry");
+            return;
+          }
 
-            autocomplete.addListener('place_changed', function () {
-                infowindow.close();
-                marker.setVisible(false);
-                const place = autocomplete.getPlace();
+          if (place.geometry.viewport) map.fitBounds(place.geometry.viewport);
+          else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(17);
+          }
 
-                if (!place.geometry) {
-                    window.alert("Autocomplete's returned place contains no geometry");
-                    return;
-                }
+          marker.setIcon({
+            url:
+              place.icon ||
+              "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(35, 35),
+          });
+          marker.setPosition(place.geometry.location);
+          marker.setVisible(true);
 
-                if (place.geometry.viewport) map.fitBounds(place.geometry.viewport);
-                else {
-                    map.setCenter(place.geometry.location);
-                    map.setZoom(17);
-                }
+          const address = place.address_components
+            ? `${place.address_components[0]?.short_name || ""} ${place.address_components[1]?.short_name || ""} ${place.address_components[2]?.short_name || ""}`
+            : "";
 
-                marker.setIcon({
-                    url: place.icon || 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
-                    size: new google.maps.Size(71, 71),
-                    origin: new google.maps.Point(0, 0),
-                    anchor: new google.maps.Point(17, 34),
-                    scaledSize: new google.maps.Size(35, 35)
-                });
-                marker.setPosition(place.geometry.location);
-                marker.setVisible(true);
+          infowindow.setContent(
+            `<div><strong>${place.name}</strong><br>${address}`,
+          );
+          infowindow.open(map, marker);
 
-                const address = place.address_components
-                    ? `${place.address_components[0]?.short_name || ''} ${place.address_components[1]?.short_name || ''} ${place.address_components[2]?.short_name || ''}`
-                    : '';
+          // Distance calculation
+          const userLatLng = place.geometry.location;
+          let minDistanceMeters = Infinity;
+          let nearestSite = null;
 
-                infowindow.setContent(`<div><strong>${place.name}</strong><br>${address}`);
-                infowindow.open(map, marker);
+          map.data.forEach(function (feature) {
+            const geometry = feature.getGeometry();
+            if (geometry.getType() === "Point") {
+              const coords = geometry.get();
+              const siteLatLng = new google.maps.LatLng(
+                coords.lat(),
+                coords.lng(),
+              );
+              const distance =
+                google.maps.geometry.spherical.computeDistanceBetween(
+                  userLatLng,
+                  siteLatLng,
+                );
+              if (distance < minDistanceMeters) {
+                minDistanceMeters = distance;
+                nearestSite = feature;
+              }
+            }
+          });
 
-                // Distance calculation
-                const userLatLng = place.geometry.location;
-                let minDistanceMeters = Infinity;
-                let nearestSite = null;
-
-                map.data.forEach(function (feature) {
-                    const geometry = feature.getGeometry();
-                    if (geometry.getType() === 'Point') {
-                        const coords = geometry.get();
-                        const siteLatLng = new google.maps.LatLng(coords.lat(), coords.lng());
-                        const distance = google.maps.geometry.spherical.computeDistanceBetween(userLatLng, siteLatLng);
-                        if (distance < minDistanceMeters) {
-                            minDistanceMeters = distance;
-                            nearestSite = feature;
-                        }
-                    }
-                });
-
-                const miles = (minDistanceMeters * 0.000621371).toFixed(2);
-                const siteName = nearestSite ? nearestSite.getProperty('Site_Name') : 'Unknown Site';
-                document.getElementById('distanceResult').innerHTML = `<p>The nearest Superfund site is called <strong>${siteName}</strong> and it is <strong>${miles}</strong> miles away from you.</p>
+          const miles = (minDistanceMeters * 0.000621371).toFixed(2);
+          const siteName = nearestSite
+            ? nearestSite.getProperty("Site_Name")
+            : "Unknown Site";
+          document.getElementById("distanceResult").innerHTML =
+            `<p>The nearest Superfund site is called <strong>${siteName}</strong> and it is <strong>${miles}</strong> miles away from you.</p>
                 <p>For more information on Superfund sites near you, visit <a href='https://www.epa.gov/superfund/superfund-national-priorities-list-npl' target='_blank'>EPA's website</a>.</p>`;
-            });
-        }
+        });
+      }
 
-        window.initMap = initMap;
+      window.initMap = initMap;
 
-        const script = document.createElement("script");
-        script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places,geometry&callback=initMap`;
-        script.async = true;
-        script.defer = true;
-        document.head.appendChild(script);
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places,geometry&callback=initMap`;
+      script.async = true;
+      script.defer = true;
+      document.head.appendChild(script);
     </script>
-</body>
-
+  </body>
 </html>
